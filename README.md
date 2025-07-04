@@ -2,9 +2,9 @@
 
 # Notas de Computación Cuántica
 
-Estas notas se basan en los cursos dictados en la {\it Universidad Nacional de La Plata}:
+Estas notas se basan en los cursos dictados en la **Universidad Nacional de La Plata**:
 
-* Introducción a a Arquitectura de Computadoras Cuánticas (Facultad de Ingeniería
+* Introducción a a Arquitectura de Computadoras Cuánticas (Facultad de Ingeniería)
 
 * Teoría de la Información Cuántica (Facultad de Ciencias Exactas)
 
@@ -12,7 +12,7 @@ Actualmente se trata de una versión preliminar por lo que pueden haber errores,
 Cualquier tipo de sugerencia en este sentido, es bienvenida.
 
 
- {\it Agradecemos particularmente a Paula Pagano que colaboró con notas del curso, a Mauricio Matera y a Norma Canosa. }
+ *Agradecemos particularmente a Paula Pagano que colaboró con notas del curso, a Mauricio Matera y a Norma Canosa.*
 
 # Guía de Github
 
