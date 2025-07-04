@@ -1,0 +1,311 @@
+\chapter{Clase 2 - 02 - 09}
+
+\section{Entropía}
+
+\subsection{Entropía de Von Neumann }
+
+\[
+S(\rho)=Tr\rho\log_{2}\rho=-\sum_{\nu}\EXPECT{\nu}{\nu}{\rho\log_{2}\rho}
+\]
+
+
+\subsection{Entropía de Shannon}
+
+\[
+S(p_{1},\dots,p_{n})=-\sum_{i}p_{i}\log_{2}p_{i}
+\]
+con $p_{i}\geq0$, $\sum_{i=1}^{n}p_{i}=1$
+
+\[
+\rho=\sum_{\nu}\KET{\nu}\BRA{\nu}p_{\nu}
+\]
+
+$Tr\rho=1$, $\rho^{\dagger}=\rho$, $\rho\geq0$
+
+\[
+S(\rho)=-\sum p_{\nu}\log p_{\nu}
+\]
+ La entropía de Von Neumann es la extensión de la de Shannon.
+
+\subsection{Propiedades de la entropía}
+
+\textbf{1)} $S(\rho)\geq0$
+
+\textbf{2)} Si $S(\rho)=0$ sii $\rho^{2}=\rho$ es estado puro y
+en este caso $p_{1}=1$ y el resto es 0. Ver la dem en la práctica
+1. 
+
+\textbf{3) }$S(\rho)$ es máxima sii $p_{1}=\dots=p_{n}=\frac{1}{n}$ 
+
+La entropía es una medida de la falta de información o del grado de
+mezcla.
+
+Dado un $\rho_{AB}$ puro $S(\rho_{AB})=0$ no hay desorden.
+
+Repasemos lo de la clase pasada:
+
+Dado un estado conjunto, la descomposición de Schmidt
+
+\[
+\KET{\psi_{AB}}=\sum_{ij}^{d_{A},d_{B}}C_{ij}\overset{\KET{i_{A}}\otimes\KET{j_{B}}}{\KET{ij}}=\sum_{k}^{n_{S}}\sigma_{k}\KET{k_{A}k_{B}}
+\]
+
+$\sigma_{k}>0$, $\sum_{k=1}^{n_{S}}\sigma_{k}^{2}$, $n_{s}=rango(C)$
+
+$Tr_{B}\LLAVEABAJO{\ketbra{\psi_{AB}}{\psi_{AB}}}{\rho_{AB}}=\rho_{A}=\sum_{k=1}^{n_{s}}\sigma_{k}^{2}\ketbra{k_{A}}{k_{A}}$
+
+$Tr_{A}\LLAVEABAJO{\ketbra{\psi_{AB}}{\psi_{AB}}}{\rho_{AB}}=\rho_{B}=\sum_{k=1}^{n_{s}}\sigma_{k}^{2}\ketbra{k_{B}}{k_{B}}$
+
+$Tr\rho_{AB}O_{AB}=\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{AB}}$
+
+Cuando el operador es un operador local
+
+$Tr\rho_{AB}\PARENTESIS{O_{A}\otimes I_{B}}=\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{A}\otimes I_{B}}=Tr\PARENTESIS{\rho_{A}O_{A}}$
+
+Recordemos entonces que la entropía de entrelazamiento esta definida
+como
+
+\[
+E(A,B)=S(\rho_{A})=S(\rho_{B})=-\sum_{k}\sigma_{k}^{2}\log_{2}\sigma_{k}^{2}
+\]
+ Esta entropía solamente proviene de la correlación ya que estos estados
+están entrelazados.
+
+$E(A,B)=0\iff n_{s}=1\rightarrow\text{no entrelazado (estado producto)}$
+
+En sistemas cuánticos la entropía no es extensiva, por lo que la entropía
+termodinámica (clásica o de variables aleatorias) no nos sirve. Uno
+obtiene lo clásico en un límite un particular de lo cuántico.
+
+\section{Qubits}
+
+El sistema más simple posible, donde la $dim\mathcal{H}=2$, la base
+de $\mathcal{H}$ es $\LLAVES{\KET 0,\KET 1}$
+
+\[
+\KET{\psi}=\alpha\KET 0+\beta\KET 1
+\]
+
+con $\MODULO{\alpha}^{2}+\MODULO{\beta}^{2}=1$, la forma más general
+de escribir esto es:
+
+\[
+\KET{\psi}=\cos\frac{\theta}{2}\KET 0+e^{i\varphi}\sin\frac{\theta}{2}\KET 1
+\]
+
+$\rho=\ketbra{\psi}{\psi}$, un estado es un punto en la esfera de
+Bloch (esfera de radio 1)
+
+Dada $\sigma_{z}=\PARENTESIS{\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}}$, $\sigma_{z}\KET 0=1\KET 0$, $\sigma_{z}\KET 1=-1\KET 1$
+
+$\sigma_{x}=\PARENTESIS{\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}},\sigma_{y}=\PARENTESIS{\begin{array}{cc}
+0 & 1\\
+-1 & 0
+\end{array}}$, $\sigma_{0}=\PARENTESIS{\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}}$
+
+$S_{z}=\frac{\hbar}{2}\sigma_{z}$, $\vec{S}=\frac{\hbar}{2}\PARENTESIS{\sigma_{x},\sigma_{y},\sigma_{z}}$
+
+$\EXPECT{\psi}{\psi}I=1$, $\EXPECT{\psi}{\psi}{\sigma_{z}}=\cos\theta$,
+$\EXPECT{\psi}{\psi}{\sigma_{x}}=\sin\theta\cos\varphi$, $\EXPECT{\psi}{\psi}{\sigma_{y}}=\sin\theta\sin\varphi$
+\begin{center}
+\includegraphics{pegado32}
+\par\end{center}
+
+\subsection{Estado general de un qubit}
+
+Estado puro $\KET{\psi}=\cos\frac{\theta}{2}\KET 0+e^{i\varphi}\sin\frac{\theta}{2}\KET 1$
+
+Estado no puro: $\rho=p\ketbra{\psi_{1}}{\psi_{1}}+(1-p)\ketbra{\psi_{2}}{\psi_{2}}$
+
+En el caso que $\BRAKETEO{\psi_{1}}{\psi_{1}}=0\rightarrow$ $\KET{\psi_{1}},\KET{\psi_{2}}$son
+autovectores, $(p,1-p)$ son autovalores de $\rho$. Si no son ortogonales
+es un estado mezcla.
+
+$\rho=\alpha\sigma_{0}+\frac{1}{2}\PARENTESIS{r_{x}\sigma_{x}+r_{y}\sigma_{y}+r_{z}\sigma_{z}}$
+
+$Tr(\rho)=1=\alpha TrI+0=2\alpha\rightarrow\alpha=1/2$
+
+\[
+Tr(\rho\sigma_{\mu})=\frac{1}{2}2r_{\mu}=\VALMEDIO{\sigma_{\mu}}\rightarrow r_{\mu}=\VALMEDIO{\sigma_{\mu}}
+\]
+
+\[
+\rho=\frac{1}{2}\PARENTESIS{I+\vec{r}\cdot\vec{\sigma}}\rightarrow\vec{r}=\VALMEDIO{\vec{\sigma}},\MODULO{\vec{r}}\leq1
+\]
+Un estado mixto en vez de ser un punto sobre la esfera es un punto
+dentro de la esfera.
+
+Punto en la esfera: estado puro
+
+Punto dentro de la esfera: estado mezcla
+
+Punto en el centro: estado completamente mezclado. $\rho=\frac{1}{2}I,\:\MODULO{\vec{r}}=0$
+
+La flecha del origen al punto es $\vec{r}$.
+
+\[
+\MODULO{\vec{r}}=1\iff\rho\text{ es puro}
+\]
+
+\[
+0\leq\MODULO{\vec{r}}<1\iff\rho\text{ no puro}
+\]
+
+Definamos la dirección $z'\parallel\vec{r}$, entonces $\rho=\frac{1}{2}\PARENTESIS{I+\vec{r}\cdot\vec{\sigma}}=\frac{1}{2}\PARENTESIS{I+\MODULO{\vec{r}}\sigma_{z'}}$.
+De aquí: los autovalores de $\rho$ son
+
+$\lambda(\rho)=\frac{1}{2}\PARENTESIS{1\pm\MODULO{\vec{r}}}=\lambda_{\pm}$
+
+$\rho=\lambda_{+}\ketbra{0'}{0'}+\lambda_{-}\ketbra{1'}{1'}$
+
+La polarización de un fotón es una dimensión de un qubit.
+
+\subsection{No cloning theorem}
+
+¿Qué sería una fotocopiadora cuántica?
+
+\[
+U\PARENTESIS{\KET{\psi}\LLAVEABAJO{\KET 0}{\text{est. en la hoja a copiar}}}=\KET{\psi}\KET{\psi}\qquad\forall\KET{\psi}
+\]
+
+No existe ese operador $U$. Supongamos que si existe y pude crear
+otro estado
+
+\[
+U\PARENTESIS{\KET{\varphi}\KET 0}=\KET{\varphi}\KET{\varphi}
+\]
+
+\[
+\PARENTESIS{\BRA{\varphi}\BRA 0}\LLAVEABAJO{U^{\dagger}U}I\PARENTESIS{\KET{\psi}\KET 0}=\BRAKETEO{\varphi}{\psi}\BRAKETEO{\varphi}{\psi}=\BRAKETEO{\varphi}{\psi}^{2}
+\]
+
+Entonces $\BRAKETEO{\varphi}{\psi}=\BRAKETEO{\varphi}{\psi}^{2}\rightarrow\BRAKETEO{\varphi}{\psi}=0\;o\;\BRAKETEO{\varphi}{\psi}=1$
+
+Vemos que podemos diseñar $U$ solo que copie estados ortogonales,
+pero no sabemos cómo es el estado que va a venir.
+
+\subsection{Representación gráfica de un estado de un qubit}
+
+\[
+\underset{t=t_{0}}{\KET{\psi}}\rightarrow\overset{U}{\APLbox}\rightarrow U\underset{t=t_{1}}{\KET{\psi}}
+\]
+
+$U=U(t_{1},t_{0})$
+
+Ahora para 2 qubits
+
+\[
+\left.\begin{array}{c}
+\underset{}{\KET{\psi_{A}}}\rightarrow\overset{U_{A}}{\APLbox}\rightarrow U_{A}\underset{}{\KET{\psi_{A}}}\\
+\underset{}{\KET{\psi_{B}}}\rightarrow\overset{U_{B}}{\APLbox}\rightarrow U_{A}\underset{}{\KET{\psi_{B}}}
+\end{array}\right\} U_{A}\KET{\psi_{A}}U_{B}\psi_{B}
+\]
+
+Ahora si parto de un estado producto 
+\[
+\KET{\psi_{AB}}=\KET{\psi_{A}}\KET{\psi_{B}}
+\]
+y el operador unitario $U_{AB}=U_{A}\otimes U_{B}$
+\[
+U_{AB}\KET{\psi_{AB}}=U_{A}\KET{\psi_{A}}U_{B}\psi_{B}
+\]
+
+$U_{A}=e^{-i\frac{H_{A}t}{\hbar}},\quad U_{B}=e^{-i\frac{H_{B}t}{\hbar}}$
+, con $t=t_{1}-t_{0}$
+
+Este es un sistema sin interacción, el $H=H_{A}+H_{B}$, este tipo
+de hamiltoniano no genera entrelazamiento, un estado producto evoluciona
+como estado producto.
+
+\textbf{Otro ejemplo, de un estado no producto:}
+
+\[
+\KET{\psi_{AB}}=\frac{\KET{00}+\KET{11}}{\sqrt{2}}
+\]
+Vemos que ya es un estado en la forma de Schmidt. Este es un estado
+entrelazado. 
+
+En cambio el estado $\KET{\psi_{AB}}=\frac{\KET{00}+\KET{01}-\KET{10}-\KET{11}}{2}$
+a simple vista no parece estado producto pero rescribamoslo (sacando
+factor común al $\KET 0$ y al $\KET 1$):
+
+\[
+\frac{\KET 0-\KET 1}{\sqrt{2}}\otimes\frac{\KET 0+\KET 1}{\sqrt{2}}
+\]
+ vemos que en realidad es un estado producto.
+
+\subsection{Bases:}
+
+\subsubsection{Base computacional:}
+
+\[
+\LLAVES{\KET{00},\KET{01},\KET{10},\KET{11}}
+\]
+
+
+\subsubsection{Base de Bell: formada por estados entrelazados:}
+
+$\LLAVES{\frac{\KET{00}\pm\KET{11}}{\sqrt{2}},\frac{\KET{01}\pm\KET{10}}{\sqrt{2}}}$
+(estos estados ya estan en la forma de Schmidt. 
+
+En información cuántica nos interesa tener en la base de la forma
+de compuertas lógicas.
+
+\section{Compuertas lógicas:}
+
+Ver la figura del primer circuito cuántico, que me genera un estado
+entrelazado
+
+\subsection{Hadamard}
+
+\[
+H=U_{H}=\frac{1}{\sqrt{2}}\PARENTESIS{\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}}=\frac{1}{\sqrt{2}}\PARENTESIS{\sigma_{z}+\sigma_{x}}
+\]
+
+\[
+U_{H}\KET 0=\frac{\KET 0+\KET 1}{\sqrt{2}}
+\]
+
+\[
+U_{H}\KET 1=\frac{\KET 0-\KET 1}{\sqrt{2}}
+\]
+
+Me hace la mezcla de estados computacionales en estados equiprobables.
+
+\subsection*{Control not}
+
+\[
+U_{CNOT}\KET{00}=\KET{00}
+\]
+
+\[
+U_{CNOT}\KET{01}=\KET{01}
+\]
+
+\[
+U_{CNOT}\KET{10}=\KET{11}
+\]
+
+\[
+U_{CNOT}\KET{11}=\KET{10}
+\]
+
+Estas compuertas son completas, esto quiere decir que con cualquiera
+de ellas puedo generar cualquier operador unitario. Estos operadores
+puedo hacer cualquier tranformación unitaria para cualquier cantidad
+de qubits. 
+
+Si uno va cambiando con los estados que entra a estos circuitos voy
+a ir obteniendo los diferentes estados de Bell.

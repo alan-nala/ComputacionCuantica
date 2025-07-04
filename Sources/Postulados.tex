@@ -1,0 +1,380 @@
+\chapter{Postulados de la Mecánica Cuántica\label{ch:postulados}}
+
+\begin{center}
+  \begin{minipage}{0.5\textwidth}
+    \begin{small}
+      ``On ne voit bien qu’avec le coeur. L’essentiel est invisible pour les yeux.'' \par
+%\setlength{\parindent}{30ex}
+ \begin{flushright}{\it Antoine de Saint-Exupéry}
+ \end{flushright}
+    \end{small}
+\end{minipage}
+  \vspace{0.5cm}
+\end{center}
+
+\section{Espacio de un Estado Físico}
+
+\begin{postulate}
+  A todo sistema físico aislado se le asigna un espacio vectorial complejo dotado de producto interno, es decir, un espacio de Hilbert, el cual se conoce como \emph{espacio del estado} de un sistema. Dicho sistema se describe completamente por un vector unitario que vive en este espacio, llamado \emph{vector estado}.
+\end{postulate}
+
+El sistema mecánico cuántico más simple y el de mayor aplicación en este contexto es el \emph{qubit}. Un qubit 
+vive un espacio de dos dimensiones.
+Supongamos que  $\ket{0}$ y $\ket{1}$ forman un base ortonormal de este espacio.
+Luego un vector estado arbitrario se puede escribir como
+\begin{equation*}
+  \ket{\psi} = a\ket{0} + b\ket{1},
+\end{equation*} donde $a$ y $b$ son números complejos. 
+La condición de que $\ket{\psi}$ sea unitario, $\braket{\psi}{\psi} = 1$, se la conoce comúnmente como la \emph{condición de normalización} para vectores estado y es imprescindible para que los vectores describan estados físicos. Para el caso del qubit, es entonces equivalente a $|a|^2 + |b|^2 = 1$. 
+
+
+\paragraph{Superposición.} Decimos que cualquier combinación lineal $\sum_i \alpha_i
+\ket{\psi_i}$ es una \emph{superposición} de los estados $\ket{\psi_i}$ con
+\emph{amplitud} $\alpha_i$ para el estado $\ket{\psi_i}$.
+
+\section{Evolución}\label{evol}
+
+\begin{postulate}
+  La evolución de un sistema cuántico \emph{cerrado} se describe por una 
+  \emph{transformación unitaria}. Esto es, el estado $\ket{\psi(t_1)}$ del sistema al tiempo $t_1$ esta relacionado con el estado del sistema $\ket{\psi(t_2)}$ al tiempo 
+  $t_2$ a través de un operador unitario $U$ que depende solo de los tiempos $t_1$ y $t_2$, \begin{equation*}
+    \ket{\psi(t_2)} = U\ket{\psi(t_1)}.
+  \end{equation*}
+
+  De forma equivalente, la evolución de un estado de un sistema cuántico \emph{cerrado} también se describe por \emph{la ecuación de Schr{\"o}dinger}, \begin{equation}
+    i\hbar\frac{\mathrm{d}\ket{\psi}}{\mathrm{d}t} = H\ket{\psi}.
+    \label{eq:sch-eq}
+  \end{equation}
+\end{postulate}
+
+En la ecuación de Schr{\"o}dinger, $\hbar=\frac{h}{2\pi}$ se denomina textit{h partida}, donde $h$ es una constante física conocida como la \emph{constante de Planck} cuyo valor se debe determinar experimentalmente. El valor exacto no de relevancia en este contexto por lo que en la práctica es común absorber el factor $\hbar$ dentro de $H$, fijando de forma  efectiva $\hbar = 1$. $H$ es un operador hermítico fijo conocido como el \emph{Hamiltoniano} del sistema cerrado.
+
+Dado que el Hamiltoniano es un operador hermítico tiene una descomposición espectral
+\begin{equation}
+  H = \sum_E E\ketbra{E}{E}, \label{eq:ham-spec-dec}
+\end{equation} con autovalores $E$ y sus correspondientes autovectores normalizados
+$\ket{E}$. Los estados $\ket{E}$ convencionalmente se los llama \emph{autoestados de energía}, o a veces \emph{estados estacionarios}, y $E$ es la \emph{energía} del estado $\ket{E}$. A la energía más baja se conoce como el 
+\emph{estado fundamental de energía} del sistema, y al  correspondiente autovalor (o autoespacio) de energía se lo conoce como el \emph{estado fundamental}. El motivo por el que en ciertas ocasiones se conoce a los estados $\ket{E}$ como estados estacionarios es porque su único cambio con el tiempo es adquirir un factor numérico global, \begin{equation*}
+  \ket{E} \rightarrow \exp(-iEt/\hbar)\ket{E}.
+\end{equation*}
+La solución a la ecuación de Sch{\"o}dinger's es:
+\begin{equation*} \ket{\psi(t_2)} = \exp\left[\frac{-iH(t_2 - t_1)}{\hbar}\right]
+    \ket{\psi(t_1)} = U(t_1, t_2)\ket{\psi(t_1)},
+\end{equation*} donde definimos \begin{equation}
+  U(t_1, t_2) \equiv \exp\left[\frac{-iH(t_2 - t_1)}{\hbar}\right].
+  \label{eq:unit-sch-eq}
+\end{equation}
+
+La ecuación \ref{eq:unit-sch-eq} refleja la equivalencia entre las dos descripciones de evolución.
+
+\paragraph{\cite{NC.00} Ejercicio 2.54:} Suponer que $A$ y $B$ son operadores hermíticos conmutantes. Probar que $\exp(A)\exp(B) = \exp(A + B)$.
+
+\paragraph{Solución:} Dado que $A$ y $B$ conmutan, se pueden diagonalizar simultáneamente. Escribimos $A = \sum_i a_i\ket{i}\bra{i}$,
+$B = \sum_j b_j\ketbra{j}{j}$, notando que $A + B = \sum_i (a_i + b_i)
+\ketbra{i}{i}$. Luego, $\exp(A) = \sum_i e^{a_i}\ketbra{i}{i}$, $\exp(B) =
+\sum_j e^{b_j}\ketbra{j}{j}$, $\exp(A + B) = \sum_i e^{a_i + b_i}
+\ketbra{i}{i}$. Es claro que \begin{align*}
+  \exp(A)\exp(B)
+  &= \left(\sum_i e^{a_i}\ketbra{i}{i}\right)\left(\sum_j e^{b_j}
+    \ketbra{j}{j}\right) \\
+  &= \sum_{i, j} e^{a_i}e^{b_j}\ket{i}\delta_{ij}\bra{j} \\
+  &= \sum_i e^{a_i}e^{b_i}\ketbra{i}{i} \\
+  &= \sum_i e^{a_i + b_i}\ketbra{i}{i} = \exp(A + B),
+\end{align*} lo cual prueba el resultado.
+
+% \paragraph{\cite{NC.00} (modified) Exercise 2.55:} Prove that $U(t_1,
+% t_2)$ as defined in \eqref{eq:unit-sch-eq} is unitary.
+
+% \paragraph{Solution:} Consider $U(t_1, t_2) = \exp\left[\frac{-iH(t_2 - t_1)}
+% {\hbar}\right]$ and $U(t_1, t_2)^\dagger = \exp\left[\frac{iH^\dagger(t_2 -
+% t_1)}{\hbar}\right]$. Rewriting $U(t_1, t_2) = \exp(A)$ and $U(t_1,
+% t_2)^\dagger = \exp(B)$ where $A$ and $B$ are Hermitian operators, it is clear
+% that $A = -B$ and commute. Hence, $\exp(A)\exp(B) = \exp(A + B) = I$.
+
+% \paragraph{\cite{NC.00} Exercise 2.56:} Use the spectral decomposition to
+% show that $K \equiv -i\log(U)$ is Hermitian for any unitary $U$, and thus $U =
+% \exp(iK)$ for some Hermitian $K$.
+
+% \paragraph{Solution:} Noting that all eigenvalues of $U$ are of modulus 1, one
+% could express $U = \sum_i e^{i\theta_i}\ketbra{i}{i}$ with the spectral
+% decomposition theorem, leading to $K = -i\log(U) = \sum_i \theta_i\ketbra{i}
+% {i}$. Clearly, $K = K^\dagger$, so $K$ is Hermitian.
+
+% \paragraph{} These exercises show that $U(t_1, t_2)$ is unitary. There is
+% therefore a one-to-one correspondence between the discrete-time description of
+% dynamics using unitary operators, and the continuous time description using
+% Hamiltonians.
+
+\section{Medida en Mecánica Cuántica} \label{medidas}
+
+\begin{postulate}
+  Las medidas en Mecánica Cuántica se describen por un conjunto de \emph{operadores de medida}: $\{M_m\}$. Estos operadores actúan sobre el estado $\ket{\psi}$ y el índice $m$ hace referencia a la salida del experimento. El estado del sistema después de la medida es 
+  
+\begin{equation*}
+    \frac{M_m\ket{\psi}}{\sqrt{\mel{\psi}{M_m^\dagger M_m}{\psi}}}
+\end{equation*}
+ y la probabilidad de obtener el resultado $m$ 
+está dada por 
+\begin{equation*}
+    p(m) = \mel{\psi}{M_m^\dagger M_m}{\psi}.
+\end{equation*}
+
+Los operadores de medida satisfacen la \emph{ecuación de completitud},
+  \begin{equation*}
+    \sum_m M_m^\dagger M_m = I.
+  \end{equation*}
+  La ecuación de completitud expresa el hecho de que la probabilidades suman uno:
+  \begin{equation*}
+    1 = \sum_mp(m) = \sum_m\mel{\psi}{M_m^\dagger M_m}{\psi}=\bra{\psi}\sum_m M_m^\dagger M_m\ket{\psi}=\bra{\psi}\ket{\psi}  .
+  \end{equation*}
+A su vez, queda claro que la \textit{condición de normalización} para estados físicos es imprescindible para que las probabilidades esten bien definidas. 
+  
+\end{postulate}
+
+% \paragraph{\cite{NC.00} Exercise 2.57: (Cascaded measurements are single
+% measurements)} Suppose $\{L_l\}$ and $\{M_m\}$ are two sets of measurement
+% operators. Show that a measurement defined by the measuerment operators
+% $\{L_l\}$ followed by a measurement defined by the measurement operators
+% $\{M_m\}$ is physically equivalent to a single measurement defined by
+% measurement operators $\{N_{lm}\}$ with the representation $N_{lm} \equiv M_m
+% L_l$.
+
+% \paragraph{Solution:} Take $\ket{\psi}$ to be the state of the quantum system
+% immediately before both measurements. Then, the state of the system after
+% measurement by $L_l$ is \begin{equation*}
+%   \ket{\psi'} = \frac{L_l\ket{\psi}}{\sqrt{\mel{\psi}{L_l^\dagger L_l}{\psi}}},
+% \end{equation*} and the state of the system after measurement by $M_m$ is
+% \begin{equation*}
+%   \ket{\psi''} = \frac{M_m\ket{\psi'}}{\sqrt{\mel{\psi'}{M_m^\dagger M_m}
+%     {\psi'}}}.
+% \end{equation*}
+% Noting that $\mel{\psi'}{M_m^\dagger M_m}{\psi'} = \frac{\mel{\psi}{L_l^\dagger
+% M_m^\dagger M_m L_l}{\psi}}{\mel{\psi}{L_l^\dagger L_l}{\psi}}$,
+% \begin{align*}
+%   \ket{\psi''}
+%   &= \left(M_m\frac{L_l\ket{\psi}}{\sqrt{\mel{\psi}{L_l^\dagger L_l}{\psi}}}
+%   \right)\sqrt{\frac{\mel{\psi}{L_l^\dagger L_l}{\psi}}{\mel{\psi}{
+%   L_l^\dagger M_m^\dagger M_m L_l}{\psi}}} \\
+%   &= \frac{M_mL_l\ket{\psi}}{\sqrt{\mel{\psi}{L_l^\dagger M_m^\dagger M_m L_l}
+%   {\psi}}} \\
+%   &= \frac{N_{lm}\ket{\psi}}{\sqrt{\mel{\psi}{N_{lm}^\dagger N_{lm}}{\psi}}}.
+% \end{align*}
+
+\section{Distinguiendo estados cuánticos}
+
+Es más simple comprender la distinguibilidad de estados a través de un juego que involucra dos partes, Alice y Bob. Alice elige estados $\ket{\psi_i} (1 \leq i \leq n)$
+a partir de un conjunto fijo de estados conocidos para ambos. Ella le da el estado $\ket{\psi_i}$ a Bob, que tiene la tarea de identificar el índice $i$ de el estado que Alice le dió.
+
+Supongamos que los estados $\ket{\psi_i}$ son ortonormales. Luego Bob puede hacer una medida cuántica para distinguir los estados, utilizando el siguiente procedimiento. Define
+los operadores de medida $M_i \equiv \ketbra{\psi_i}{\psi_i}$, 
+asignando uno a cada índice $i$, y un operador de medida adicional $M_0$ definido como la raíz cuadrad positiva del operador $I - \sum_{i \neq 0}
+\ketbra{\psi_i}{\psi_i}$. Estos operadores satisfacen la relación de completitud,
+y si el estado $\ket{\psi_i}$ es preparado entonces $p(i) = \mel{\psi_i}{M_i}
+{\psi_i} = 1$, por lo que el resultado $i$ ocurre con certeza. 
+Luego, es posible distinguir los estados ortonormales $\ket{\psi_i}$.
+
+Por otro lado, si los estados $\ket{\psi_i}$ 
+no son ortonormales podemos entonces demostrar que no existe  \emph{medida cuántica capaz de distinguir a los estados}.
+
+\begin{theorem}
+  Los estados no ortogonales no se pueden distinguir de manera confiable a través de medidas.
+
+\end{theorem}
+
+\begin{proof}
+  Una demostración por el absurdo muestra que no existe una medida que distinga estados no-ortogonales $\ket{\psi_1}$ y $\ket{\psi_2}$. Supongamos que dicha medida sí es posible: 
+Si se prepara el estado $\left|\psi_1\right\rangle$
+($\left|\psi_2\right\rangle$), luego la probabilidad de medir 
+  $j$ tal que $f(j) = 1$ ($f(j)
+  = 2$) debe ser 1. Definiendo
+$E_i \equiv \sum_{j: f(j) = i}M_j^\dagger M_j$, estas observaciones se pueden escribir como:
+\begin{equation*}
+\left\langle\psi_1 |  E_1 |\psi_1\right\rangle = 1; \left\langle\psi_2 |  E_2 |\psi_2\right\rangle = 1.
+\end{equation*}
+
+Dado que $\sum_iE_i = I$ se ve que
+$\sum_i\left\langle\psi_1 |  E_i |\psi_1\right\rangle = 1$, y dado que
+$\left\langle\psi_1 |  E_1 |\psi_1\right\rangle = 1$, se debe tener
+$\left\langle\psi_1 |  E_2 |\psi_1\right\rangle = 0$, por lo que
+$\sqrt{E_2}\left|\psi_1\right\rangle = 0$. Supongamos que descomponemos 
+$\left|\psi_2\right\rangle = \alpha\left|\psi_1\right\rangle + \beta\left|\phi\right\rangle$,
+donde $\left|\phi\right\rangle$ es ortonormal a
+$\left|\psi_1\right\rangle$, $|\alpha|^2 + |\beta|^2 = 1$, y
+$|\beta| <
+  1$ dado que $\left|\psi_1\right\rangle$ y $\left|\psi_2\right\rangle$
+no son ortogonales. Entonces
+$\sqrt{E_2}\left|\psi_2\right\rangle = \beta\sqrt{E_2}\left|\phi\right\rangle$,
+lo que implica una contradicción, ya que
+\begin{equation*}\left\langle\psi_2 |  E_2 |\psi_2\right\rangle = |\beta|^2\left\langle\phi |  E_2 |\phi\right\rangle \leq |\beta|^2
+    < 1,
+    \end{equation*} 
+    donde la última desigualdad surge de la observación de que
+ \begin{equation*}
+    \mel{\phi}{E_2}{\phi} \leq \sum_i\mel{\phi}{E_i}{\phi} =
+    \braket{\phi}{\phi} = 1.
+  \end{equation*}
+\end{proof}
+
+\section{Medidas Proyectivas}
+
+\paragraph{Medidas Proyectivas.} 
+
+Una medida proyectiva está descripta por un \emph{observable}, $M$, un operador hermítico que actúa sobre el estado del sistema.
+Este tiene una descomposición espectral 
+\begin{equation*}
+M = \sum_m mP_m,
+\end{equation*}
+donde $P_m$ es un proyector en el autoespacio de $M$ con autovalor $m$.
+Las posibles salidas de la medida corresponden a los autovalores,
+$m$, de este observable. Midiendo al estado
+$\left|\psi\right\rangle$, la probabilidad de obtener el resultado $m$ está
+dada por $p(m) = \left\langle\psi |  P_m |\psi\right\rangle.$ Si se obtiene el resultado $m$,
+el estado del sistema luego de la medida es
+\begin{equation*}
+\frac{P_m\left|\psi\right\rangle}{\sqrt{p(m)}}.
+\end{equation*}
+Las medidas proyectivas son un caso especial en el que los operadores $M_m$ definidos en el Postulado 3, además de satisfacer la relación $\sum_m M_m^\dagger M_m = I$, 
+son proyectores ortogonales, es decir, $M_m$ son hermíticos y $M_mM_{m'} = \delta_{m, m'}M_m$.
+
+El promedio de una medida es \begin{align*}
+  \langle M \rangle
+  &= \sum_m mp(m) \\
+  &= \sum_m m\mel{\psi}{P_m}{\psi} \\
+  &= \bra{\psi}\left(\sum_m mP_m\right)\ket{\psi} \\
+  &= \mel{\psi}{M}{\psi};
+\end{align*}
+  el valor promedio de un observable $M$ comúnmente se escribe como
+  $\langle M \rangle \equiv \left\langle\psi |  M |\psi\right\rangle$. A partir de esta formula para 
+  los promedios se obtiene una expresión para la desviación estándar asociada a la observación de $M$,
+\begin{equation*}
+[\Delta(M)]^2 = \langle (M - \langle M \rangle)^2 \rangle = \langle M^2
+  \rangle - \langle M \rangle^2.
+  \end{equation*}
+
+% \paragraph{\cite{NC.00} Exercise 2.58:} Suppose we prepare a quantum
+% system in an eigenstate $\ket{\psi}$ of some observable $M$, with corresponding
+% eigenvalue $m$. What is the average observed value of $M$, and the standard
+% deviation?
+
+% \paragraph{Solution:} The average observed value of $M$ is \begin{equation*}
+%   \langle M \rangle = \mel{\psi}{M}{\psi} = \mel{\psi}{m}{\psi} =
+%   m\braket{\psi}{\psi} = m.
+% \end{equation*} Similarly, the average observed value of $M^2$ is
+% \begin{equation*}
+%   \langle M^2 \rangle = \mel{\psi}{M^2}{\psi} = \mel{\psi}{m^2}{\psi} =
+%   m^2\braket{\psi}{\psi} = m^2.
+% \end{equation*} It is clear that the standard deviation is $\Delta(M) = \sqrt{
+%   \langle M^2 \rangle - \langle M \rangle^2} = \sqrt{m^2 - m^2} = 0$.
+
+% \paragraph{} This formulation of measurement and standard deviations in terms
+% of observables gives rise in an elegant way to results such as the
+% \emph{Heisenberg uncertainty principle}.
+
+% \begin{proof}[Heisenberg uncertainty principle]
+%   Suppose $A$ and $B$ are two Hermitian operators, and $\ket{\psi}$ is a
+%   quantum state. Suppose $\mel{\psi}{AB}{\psi} = x + iy$, where $x$ and $y$ are
+%   real. Note that $\mel{\psi}{[A, B]}{\psi} = 2iy$ and $\mel{\psi}{\{A, B\}}
+%   {\psi} = 2x$. This implies that \begin{equation*}
+%     |\mel{\psi}{[A, B]}{\psi}|^2 + |\mel{\psi}{\{A, B\}}{\psi}|^2 =
+%     4|\mel{\psi}{AB}{\psi}|^2.
+%   \end{equation*} By the Cauchy-Schwarz inequality \begin{equation*}
+%     |\mel{\psi}{AB}{\psi}|^2 \leq \mel{\psi}{A^2}{\psi}\mel{\psi}{B^2}{\psi},
+%   \end{equation*} which combined with the above equation and dropping a
+%   non-negative term gives \begin{equation*}
+%     |\mel{\psi}{[A, B]}{\psi}|^2 \leq 4\mel{\psi}{A^2}{\psi}
+%     \mel{\psi}{B^2}{\psi}.
+%   \end{equation*} Suppose $C$ and $D$ are two observables. Substituting $A = C
+%   - \langle C \rangle$ and $B = D - \langle D \rangle$ into the last equation,
+%   we obtain Heisenberg's uncertainty principle as it is usually stated:
+%   \begin{equation*}
+%     \Delta(C)\Delta(D) \geq \frac{|\mel{\psi}{[C, D]}{\psi}|}{2}.
+%     \label{eq:hei-unc-prin}
+%   \end{equation*}
+
+%   The correct interpretation of the uncertainty principle is that if we prepare
+%   a large number of quantum systems in identical states, $\ket{\psi}$, and then
+%   perform measurements of $C$ on some of those systems, and of $D$ in others,
+%   then the standard deviation $\Delta(C)$ of the $C$ results times the standard
+%   deviation $\Delta(D)$ of the $D$ results for $D$ will satisfy the inequality
+%   \eqref{eq:hei-unc-prin}.
+% \end{proof}
+
+% Rather than giving an observable to describe a projective measurement, often
+% people simply list a complete set of orthogonal projectors $P_m$ satisfying the
+% relations $\sum_m P_m = I$ and $P_mP_{m'} = \delta_{mm'}P_m$. The corresponding
+% observable implicit in this usage is $M = \sum_m mP_m$. Another widely used
+% phrase, to `measure in a basis $\ket{m}$', where $\ket{m}$ forms an orthonormal
+% basis, simply means th perform the projective measurement with projectors $P_m
+% = \ketbra{m}{m}$.
+
+% \paragraph{} Suppose $\vec{v}$ is any real three-dimensional unit vector. Then
+% we can define an observable: \begin{equation*}
+%   \vec{v} \cdot \vec{\sigma} \equiv v_1\sigma_1 + v_2\sigma_2 + v_3\sigma_3.
+% \end{equation*} Measurement of this observable is sometimes referred to as a
+% `measurement of spin along the $\vec{v}$ axis', for historical reasons.
+
+% \paragraph{\cite{NC.00} Exercise 2.59:} Suppose we have qubit in the state
+% $\ket{0}$, and we measure the observable $X$. What is the average value of $X$?
+% What is the standard deviation of $X$?
+
+% \paragraph{Solution:} The average observed value of $X$ is \begin{equation*}
+%   \langle X \rangle = \mel{0}{X}{0} = \braket{0}{1} = 0,
+% \end{equation*} while the average observed of $X^2$ is \begin{equation*}
+%   \langle X^2 \rangle = \mel{0}{X^2}{0} = \braket{1}{1} = 1.
+% \end{equation*} Hence, the standard deviation of $X$ is $\Delta(X) = \sqrt{
+% \langle X^2 \rangle - \langle X \rangle^2} = \sqrt{1 - 0^2} = 1$.
+
+\subsection{Medidas POVM}
+
+\paragraph{Positive Operator-Valued Measure (POVM).} 
+Supongamos que se realiza una medida sobre un sistema cuántico en el estado $\ket{\psi}$ 
+descripta por operadores de medida $M_m$.
+Luego la probabilidad de obtener el resultado $m$ está dada por
+$p(m) = \mel{\psi}{M_m^{\dagger}M_m}{\psi}$. Si definimos
+\begin{equation*}
+  E_m \equiv M_m^{\dagger}M_m.
+\end{equation*} Luego, a partir del Postulado 3 y operaciones de álgebra lineal, se ve que $E_m$ 
+es un operador positivo tal que $\sum_mE_m = I$ y $p(m) = \mel{\psi}{E_m}{\psi}$.
+Luego el conjunto de operadores $E_m$ permite determinar las
+probabilidades de diferentes resultados de medida. 
+A los operadores $E_m$ se los conoce como \emph{elementos POVM} asociados
+a la medida. Al conjunto completo de los $\{E_m\}$ se los llama \emph{POVM}.
+
+% \paragraph{\cite{NC.00} Exercise 2.62:} Show that any measurement where
+% the measurement operators and the POVM elements coincide is a projective
+% measurement.
+
+% \paragraph{Solution:} A measurement operator $M_m$ would be defined as a
+% POVM element $E_m = M_m^{\dagger}M_m$, which leads to \begin{equation*}
+%   \mel{\psi}{E_m}{\psi} = \mel{\psi}{M_m}{\psi} \geq 0
+% \end{equation*} for all $\ket{\psi}$. As $M_m$ is a positive operator, it must
+% be Hermitian. Therefore, \begin{equation*}
+%   E_m = M_m^{\dagger}M_m = M_mM_m = M_m^2 = M_m
+% \end{equation*} which, by definition, shows that $M_m$ be a projective
+% measurement.
+
+% \paragraph{\cite{NC.00} Exercise 2.63:} Suppose a measurement is described
+% by measurement operators $M_m$. Show that there exist unitary operators $U_m$
+% such that $M_m = U_m\sqrt{E_m}$, where $E_m$ is the POVM associated to the
+% measurement.
+
+% \paragraph{Solution:} Noting that $U_m^{\dagger}U_m = I$, \begin{align*}
+%   M_m^{\dagger}M_m
+%   &= \sqrt{E_m}U_m^{\dagger}U_m\sqrt{E_m} \\
+%   &= \sqrt{E_m}I\sqrt{E_m} \\
+%   &= E_m.
+% \end{align*}
+
+% \subsection{Phase}
+
+% \paragraph{Phase.} Two amplitudes, $a$ and $b$, \emph{differ by a relative
+% phase} if there is a real $\theta$ such that $a = \exp(i\theta)b$.
+
+% [more elaboration needed, the elaboration in my book talks about global phase
+% vs relative phase but idk if we'll want to put that in]
+
+% \paragraph{\cite{NC.00} Exercise 2.65:} Express the states $(\ket{0} +
+% \ket{1})/\sqrt{2}$ and $(\ket{0} - \ket{1})/\sqrt{2}$ in a basis in which they
+% are not the same up to a relative phase shift.
+
+% [idk what the soln for this is supposed to mean either]

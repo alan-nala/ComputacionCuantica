@@ -1,0 +1,444 @@
+\chapter{Clase 1 - 28 - 08}
+
+\section{Postulados de la mecánica cuántica}
+
+\textbf{1)} \textbf{Sistema aislado}: para cada sistema cuántico uno
+le asocia un espacio de Hilbert $\mathcal{H}$de dimensión finita normalizado
+con un ket $\KET{\psi}\in\mathcal{H}$
+
+\textbf{2) Medidas:} es un conjunto de operadores $\LLAVES{M_{k},\sum_{k}M_{k}^{\dagger}M_{k}=I}$
+
+Se satisface
+
+$P(k)=\EXPECT{\psi}{\psi}{M_{k}^{\dagger}M_{k}}$, estas dos ecuaciones implican
+que $\sum_{k}P(k)=1$
+
+Luego de la medida $\KET{\psi}\rightarrow\frac{M_{k}\KET{\psi}}{\sqrt{P(k)}}$
+
+Medidas proyectivas, caso particular de estas medidas, corresponde
+al caso de que los $M_{k}$ son proyectores ortogonales: $M_{k}=P_{k}$,
+$P_{k}^{2}=P_{k}$ , $P_{k}P_{l}=\delta_{kl}P_{k}$
+
+\textbf{3)} Para sistema aislado el estado va a \textbf{evolucionar}
+de forma unitaria: $\KET{\psi(t_{2})}=U_{t_{2}t_{1}}\KET{\psi(t_{1})}$
+en información cuántica no pensamos la evolución temporal como algo continuo
+sino más bien como un operador unitario que evoluciona. Si tomamos
+como algo continuo llegamos a la ecuación de Schrödinger del operador
+unitario.
+
+\textbf{4) Sistemas compuestos }por varios subsistemas: 
+
+\[
+\mathcal{H}=\mathcal{H}_{1}\otimes\mathcal{H}_{2}\dots\otimes\mathcal{H}_{n}
+\]
+
+\[
+\KET{\psi}\in\mathcal{H}
+\]
+
+\[
+n=2\rightarrow\mathcal{H}=\mathcal{H}_{1}\otimes\mathcal{H}_{2}
+\]
+
+Las bases
+
+\[
+B_{1}=\LLAVES{\KET{1_{a}}}\quad\text{base de }\mathcal{H}_{1}
+\]
+
+\[
+B_{2}=\LLAVES{\KET{1_{b}}}\text{base de }\mathcal{H}_{2}
+\]
+
+Base de $\mathcal{H}_{1}\otimes\mathcal{H}_{2}=\LLAVES{\KET{1_{a}}\otimes\KET{1_{b}}=\KET{1_{j}}}$
+
+Entonces la $dim\mathscr{\mathcal{H}}=dim\mathscr{\mathcal{H}}_{1}.dim\mathscr{\mathcal{H}}_{2}$
+
+\[
+dim\mathscr{\mathcal{H}}=\PARENTESIS{dim\mathscr{\mathcal{H}}_{1}}^{n}
+\]
+
+Nos detenemos en este caso, cómo son los estados de este producto
+tensorial, queremos puntualizar en el concepto de entrelazamiento.
+
+
+\section{Entrelazamiento:}
+
+\[
+\mathcal{H}=\mathscr{\mathcal{H}}_{1_{A}}\otimes\mathscr{\mathcal{H}}_{2_{B}}
+\]
+
+sistemas compuestos: vamos a tomar subsistemas distinguibles. (Los
+casos indisttinguibles los podemos hacer tender a sistemas distinguibles
+y lo vamos a ver más adelante)
+
+Tenemos estados productos:
+
+\[
+\KET{\psi_{AB}}=\KET{\psi_{A}}\otimes\KET{\psi_{B}}\ACLARACION{\text{aligeramos notación}}=\KET{\psi_{A}}\KET{\psi_{B}}
+\]
+
+En general: 
+\[
+\KET{\psi_{AB}}=\sum_{ij}C_{ij}\LLAVEABAJO{\KET{i_{A}}\otimes\KET{j_{B}}}{\KET{ij}}
+\]
+
+Si $C_{ij}=\alpha_{i}\beta_{j}$$\KET{\psi_{AB}}=\sum_{i}\PARENTESIS{\alpha_{i}\KET{i_{A}}}\PARENTESIS{\beta_{j}\KET{j_{B}}}=\KET{\psi_{A}}\KET{\psi_{B}}$
+
+$\KET{\psi_{A}}=\sum_{i}\alpha_{i}\KET{i_{A}}$, $\KET{\psi_{B}}=\sum_{j}\beta_{j}\KET{j_{B}}$
+
+\textbf{Estados entrelazados:} (no son estados producto)
+
+\[
+\KET{\psi_{AB}}\neq\KET{\psi_{A}}\KET{\psi_{B}}
+\]
+\emph{Uno no puede hacer combinaciones lineales de los estados que
+tiene pero si de los estados producto que tiene.}
+
+Un estado no producto: 
+\[
+\KET{\psi_{AB}}=\frac{\KET{0_{A}}\KET{0_{B}}+\KET{1_{A}}\KET{1_{B}}}{\sqrt{2}}
+\]
+
+esto es una suma de productos pero no es estado producto, esto no
+es clásico, ej spines.
+
+Caso más simple, spin 1/2. (Producto)
+
+\[
+\KET{\uparrow\uparrow}=\KET{\uparrow}\KET{\uparrow}
+\]
+
+ahora bien el estado entrelazado:
+
+\[
+\frac{\KET{\uparrow\uparrow}+\KET{\downarrow\downarrow}}{\sqrt{2}}
+\]
+
+\[
+\BRAKETEO{i_{A}j_{B}}{k_{A}l_{B}}=\BRAKETEO{i_{A}}{k_{A}}\BRAKETEO{j_{B}}{l_{B}}
+\]
+
+\[
+\KET{\psi_{AB}}=\sum_{ij}C_{ij}\KET{ij}
+\]
+
+\[
+d_{A/B}=dim(\text{\ensuremath{\mathcal{H}}}_{A/B})
+\]
+
+Estado producto: corresponden al caso particular en el que esta matriz
+tiene rango 1 $rango(C)=1$ $C:d_{A}\times d_{B}$
+
+\[
+C_{ij}=\alpha_{i}\beta_{j}=\left(\begin{array}{c}
+\alpha_{i}\\
+\vdots\\
+\alpha_{d_{A}}
+\end{array}\right)\PARENTESIS{\begin{array}{ccc}
+\beta_{j} & \dots & \beta_{d_{B}}\end{array}}
+\]
+
+
+\subsubsection{¿Cómo diagonalizar una matriz cuadrada?}
+
+Uno no puede diagonalizar así no más la matriz porque no es cuadrada:
+
+Cualquier matriz se puede escribir como: 
+\begin{equation}
+\LLAVEABAJO C{d_{A}\times d_{B}}=\LLAVEABAJO U{d_{A}\times d_{A}}\LLAVEABAJO D{d_{A}\times d_{B}}\LLAVEABAJO{V^{\dagger}}{d_{B}\times d_{B}}\label{eq:Cij}
+\end{equation}
+
+$D$ diagonal, $U$ y $V$ son unitarias. Tener D diagonal podemos
+usarla para escribir mejor $C_{ij}$
+
+\[
+D_{kk'}=\delta_{kk'}\sigma_{k}
+\]
+
+\[
+\sigma_{k}\geq0
+\]
+
+\[
+C_{ij}=\sum_{k}U_{ik}\sigma_{k}V_{jk}^{*}
+\]
+a partir de esto todo estado:
+
+\[
+\KET{\psi_{AB}}=\sum_{ij}C_{ij}\KET{i_{A}}\KET{i_{B}}
+\]
+
+\[
+\BRAKETEO{\psi_{AB}}{\psi_{AB}}=1=\sum_{ij}\MODULO{C_{ij}}^{2}=1
+\]
+
+Suponemos bases ortogonales
+
+\[
+\KET{\psi_{AB}}=\sum_{ijk}\sigma_{k}U_{ik}\KET{i_{A}}V_{jk}^{*}\KET{j_{B}}
+\]
+
+\[
+=\sum_{k}\sigma_{k}\LLAVEABAJO{\PARENTESIS{\sum_{i}U_{ik}\KET{i_{A}}}}{\KET{k_{A}}}\LLAVEABAJO{\PARENTESIS{\sum_{j}V_{jk}^{*}\KET{j_{B}}}}{\KET{k_{B}}}
+\]
+
+\[
+=\sum_{k=1}^{n_{s}}\sigma_{k}\KET{k_{A}}\KET{k_{B}}
+\]
+
+
+\subsection{Descomposición de Schmidt}
+
+entonces una descomposición de estados productos uno los puede escribir
+con el mismo índice. $n_{s}$ es el número de Schmidt es el rango
+de la matriz $C$ (que es igual al de $D$). Los estados productos
+son el caso especial donde $n_{s}=1$ $\rightarrow$ \textbf{estado
+puro clásico}
+
+Usando la ortogonalidad de los i y de los j llegamos a la ortogonalidad
+de los k $\BRAKETEO{k_{A}}{k'_{A}}=\delta_{kk'}$
+
+Pasemos en limpio:
+
+\[
+\KET{\psi_{AB}}=\sum_{k=1}^{n_{s}}\sigma_{k}\KET{k_{A}}\KET{k_{B}}
+\]
+
+Con $\sum_{k}\sigma_{k}^{2}=1$ acá tenemos 2 casos
+
+$\begin{cases}
+\begin{array}{c}
+n_{s}=1\rightarrow\KET{\psi_{AB}}=\KET{1_{A}}\KET{1_{B}}\\
+n_{s}\geq2
+\end{array} & \begin{array}{c}
+\text{Estados producto}\\
+\text{Estados entrelazados}
+\end{array}\end{cases}\begin{array}{c}
+\text{sistemas clásicos}\\
+\text{sistemas puramente cuánticos}
+\end{array}$
+
+\[
+n_{s}=rango(C)\leq Min(d_{A},d_{B})
+\]
+
+B es el resto del universo, que es muy complejo, pero si el sistema
+A vive en un espacio de dimensión 2 entonces el estado más general
+posible vive en dimensión 2. Esto indica que si las componentes de
+un sistema es de dimensión reducida uno tiene una forma compacta de
+escribir el sistema. 
+
+\textbf{¿Cómo calculamos los $\sigma_{k}$?}
+
+De la expresión \ref{eq:Cij} $\underset{d_{B}\times d_{B}}{\underset{d_{B}\times d_{A}}{C^{T}}\underset{d_{A}\times d_{B}}{C}}=VD^{T}U^{T}UDV^{\dagger}=VD^{T}DV^{\dagger}$
+
+\[
+\sigma_{k}^{2}=\lambda_{k}\PARENTESIS{C^{T}C}
+\]
+
+Análogo con $\underset{d_{A}\times d_{A}}{CC^{T}}=UDD^{T}U^{T}=\lambda_{k}\PARENTESIS{CC^{T}}$ 
+
+\[
+\sigma_{k}^{2}=\lambda_{k}\PARENTESIS{CC^{T}}
+\]
+
+vamos a obtener solo 2 autovalores, entonces para encontrar los sigmas
+los podemos obtener a partir de diagonalizar una matriz de 2x2.
+
+Supongamos el sistema $E$
+
+\[
+\mathcal{H}_{A}=\LLAVES{\KET{\uparrow_{A}},\KET{\downarrow_{A}}}
+\]
+
+\[
+\mathcal{H}_{B}=\LLAVES{\KET{\uparrow_{B}},\KET{\downarrow_{B}}}
+\]
+
+Estado singlete, vemos que no es estado producto porque es descomposición
+de Schmit
+
+\[
+\frac{\KET{\uparrow\downarrow}-\KET{\downarrow\uparrow}}{\sqrt{2}}=\KET{\psi_{AB}}
+\]
+
+estado de $S=0$
+
+Estado triplete $S=1$
+
+\[
+\frac{\KET{\uparrow\downarrow}+\KET{\downarrow\uparrow}}{\sqrt{2}}
+\]
+
+$\frac{\KET{\uparrow\uparrow}\pm\KET{\downarrow\downarrow}}{\sqrt{2}}$
+estos tienen $S=\pm1$
+
+Estos son todos ej de estados entrelazados
+
+La $dim\mathcal{H}_{A}=dim\mathcal{H}_{B}=2$ entonces $dim\mathcal{H}_{A}\otimes\mathcal{H}_{B}=4$
+
+Estos estados son una base del sistema.
+
+\subsection{Observable local en A: }
+
+es un operador que corresponden a un observable que son de la forma:
+$O_{A}\otimes I_{B}$ (Análogo para B)
+
+$\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{A}\otimes I_{B}}=\sum_{k,k'}\sigma_{k}\sigma_{k'}\LLAVEABAJO{\EXPECT{k_{A}k_{B}}{k_{A}'k'_{B}}{O_{A}\otimes I_{B}}}{\EXPECT{k_{A}}{k'_{A}}{O_{A}}\LLAVEABAJO{\BRAKETEO{k_{B}}{k'_{B}}}{\delta_{kk'}}}$
+
+\[
+=\sum_{k}\sigma_{k}^{2}\EXPECT{k_{A}}{k_{A}}{O_{A}}
+\]
+El estado está en el estado $k_{A}$ con probabilidad $\sigma_{k}^{2}$.
+
+\[
+\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{A}\otimes I_{B}}=\text{Tr}\rho_{A}O_{A}
+\]
+ con $\rho_{A}=\sum_{k}\sigma_{k}^{2}\KET{k_{A}}\BRA{k_{A}}$ este
+es el estado reducido del sistema, es un operador densidad.
+
+Uno parte de un estado puro, es un estado de un sistema con T=0, el
+estado fundamental del hamiltoniano conjunto. El valor medio del estado
+puro viene de la mezcla estadística de estados puros, y esto corresponde
+a estados calientes. Es un promedio local de un sistema puro entrelazado.
+Un estado total que esta a temperatura 0, cuando uno va al sistema
+local lo ve a temperatura distinta de cero, lo puedo ver como un estado
+térmico. Uno no puede representar con función de onda el sistema local,
+lo tenemos que hacer con un operador densidad (local), estos $\sigma_{k}^{2}$
+son los autovalores de los autovectores $\KET{k_{A}}\BRA{k_{A}}$
+que surgen de diagonalizar $\rho_{A}$. De forma análoga obtenemos
+para $B$:
+
+\[
+\EXPECT{\psi_{AB}}{\psi_{AB}}{I_{A}\otimes O_{B}}=\text{Tr}\rho_{B}O_{B}
+\]
+
+\[
+\rho_{b}=\sum_{k}\sigma_{k}^{2}\KET{k_{B}}\BRA{k_{B}}
+\]
+
+Otra de las cosas notables es que el subsistema total esta T=0, los
+subsistemas estan calientes, con los mismo autovalores. Los subsistemas
+tienen la misma entropía, porque la obtenemos a partir de los $\sigma_{k}$,
+$S_{A}=S_{B}$.
+
+\subsection{Operador densidad}
+
+1Cuando uno calcula $\EXPECT{\psi}{\psi}O=Tr\PARENTESIS{\KET{\psi}\BRA{\psi}O}=\sum_{j}\BRAKETEO k{\psi}\EXPECT{\psi}jO$ 
+
+\textbf{Estados puros} corresponden a un \textbf{operador densidad
+$\rho=\KET{\psi}\BRA{\psi}$}, proyector ortogonal, satisfaciendo:
+$\rho^{2}=\rho$ de rango uno.
+
+En general, un operador densidad general no es un estado puro, es decir
+$\rho^{2}\neq\rho$
+
+$\rho=\sum_{i}p_{i}\KET{\psi_{i}}\BRA{\psi_{i}}$, $\BRAKETEO{\psi_{i}}{\psi_{j}}=\delta_{ij}$$p_{i}\geq0$
+(esto último $\iff$) 
+
+$\EXPECT{\psi}{\psi}{\rho}=\sum_{i}p_{i}\MODULO{\BRAKETEO{\psi}{\psi}}^{2}\geq0$
+
+Para describir cosas locales necesito operadores densidad porque los
+estados puros <<quedan chicos>>. 
+
+\subsection{Matriz densidad reducida: }
+
+dado un estado puro
+
+\[
+\KET{\psi_{AB}}\rightarrow\rho_{AB}=\KET{\psi_{AB}}\BRA{\psi_{AB}}
+\]
+tal que $\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{AB}}=Tr\PARENTESIS{\rho_{AB}O_{AB}}$
+con $\rho_{AB}^{2}=\rho_{AB}$
+
+Vamos a lo local:
+
+\[
+\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{A}\otimes I_{A}}=Tr\rho_{A}O_{A}
+\]
+ $\rho_{A}^{2}<\rho_{A}$el menor entre operadores implica que los
+autovalores son menores
+
+\[
+\KET{\psi_{AB}}=\sum_{k}\sigma_{k}\KET{k_{A}}\KET{k_{B}}
+\]
+
+\[
+\rho_{A}=\sum_{k}\sigma_{k}^{2}\KET{k_{A}}\BRA{k_{A}}\ACLARACION{\text{traza parcial}}=Tr_{B}\KET{\psi_{AB}}\BRA{\psi_{AB}}
+\]
+
+\[
+=\sum\LLAVEABAJO{\BRAKETEO{k_{B}}{\psi_{AB}}}{\sigma_{k}\KET{k_{A}}}\LLAVEABAJO{\BRAKETEO{\psi_{AB}}{k_{A}}}{\sigma_{k}\KET{k_{B}}}
+\]
+
+\[
+\rho_{A}=Tr_{B}\rho_{AB},\qquad\rho_{B}=Tr_{A}\rho_{AB}
+\]
+
+\[
+Tr_{AB}\rho_{AB}(O_{A}\otimes I_{B})=Tr_{A}(\rho_{A}O_{A})
+\]
+
+\[
+Tr_{AB}\rho_{AB}(I_{A}\otimes O_{B})=Tr_{B}(\rho_{B}O_{B})
+\]
+
+Esto lo tuvimos que introducir (estas trazas parciales ) debido a
+que tenemos estados entrelazados.
+
+$\rho_{AB}=\KET{\psi_{AB}}\BRA{\psi_{AB}}$ Puro $\rho_{AB}^{2}=\rho_{AB}$
+
+$\rho_{A}=Tr_{B}\rho_{AB}$ no puro $\rho_{A}^{2}<\rho_{A}$
+
+$\rho_{B}=Tr_{A}\rho_{AB}$ no puro $\rho_{B}^{2}<\rho_{B}$
+
+Si uno tiene una distribución de probabilidades, la queremos caracterizar.
+Una cantidad que caracteriza el grado de mezcla es la \textbf{entropía
+de Shannon o Von Neumann} $S(\rho_{A})=Tr\rho_{A}\log_{2}\rho_{A}=-\sum_{k}\sigma_{k}^{2}\log_{2}\sigma_{k}^{2}$
+(para 0 vale 0: $x\log x\rightarrow0$ cuando $x\rightarrow0$)
+
+Los estados puros $S(\rho)=0\iff\rho^{2}=\rho$ (esta todo concentrado
+en un solo evento (1,0,0,0))
+
+Para estados mezcla $S(\rho)>0\iff\rho^{2}<\rho$
+
+Dado un $\rho_{AB}$ puro $S(\rho_{AB})=0$ no hay desorden.
+
+$\rho_{A}=Tr_{B}\rho_{AB}$ no puro entonces $S(\rho_{A})>0$
+
+$\rho_{B}=Tr_{A}\rho_{AB}$ no puro entonces $S(\rho_{B})>0$
+
+luego $S(\rho_{A})=S(\rho_{B})$ 
+
+\subsection{Entropía de entrelazamiento (E)}
+
+\[
+S(\rho_{AB}=0)\rightarrow E(A,B)=S(\rho_{A})=S(\rho_{B})
+\]
+
+En todo sistema descripto por variables aleatorias (clásico)
+\[
+S(A,B)\geq S(A)
+\]
+
+\[
+S(A,B)\geq S(A)
+\]
+
+Siendo $S(A,B)$ la entropía de la distribución de probabilidades
+conjuntas. $S(AB)=\sum_{ij}p_{ij}\log_{2}p_{ij}$, $S(A)=\sum_{i}p_{i}\log p_{i}$,
+$p_{i}=\sum_{j}p_{ij}$
+
+Siempre ocurre esto, sea o no clásico. Vemos que en un estado entrelazado
+cambia esto, el desorden global es menor que el desorden local.
+
+La teoría cuántica es una nueva forma de describir sistemas aleatorio,
+va más allá de la teoría de probabilidades clásicas. Porque no son
+números, son operadores que no conmutan y cambian las cosas en juego.
+Entonces esa entropía entrelazada existe, pero no a nivel clásico. 
+
+\paragraph*{El estado entrelazado es una suma de estados productos. Según Schödinger
+es LA mecánica cuántica. Es una nueva teoría de descripción de eventos.
+Vamos a tener un marco general para describir estos eventos. Luego
+vamos a explicar la física de fondo }

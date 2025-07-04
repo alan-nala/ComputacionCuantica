@@ -1,0 +1,801 @@
+\chapter{Entrelazamiento Cuántico}
+
+\begin{center}
+  \begin{minipage}{0.5\textwidth}
+    \begin{small}
+      `` Solo sé que no sé nada y, al saber que nada sé, algo sé.'' \par
+%\setlength{\parindent}{30ex}
+ \begin{flushright}{\it Sócrates}
+ \end{flushright}
+    \end{small}
+\end{minipage}
+  \vspace{0.5cm}
+\end{center}
+
+Una propiedad clave que caracteriza el comportamiento de los sistemas en el régimen cuántico es el llamado 
+\emph{Entrelazamiento cuántico}. Esta propiedad puede entenderse como la imposibilidad de representar las correlaciones existentes en un sistema
+cuántico en términos de una distribución estadística sobre posibles configuraciones del sistema, especificables en términos de estados locales definidos.
+Para entender cómo esta noción es fundamental en la descripción clásica de los sistemas físicos, consideremos por ejemplo el sistema Tierra-Luna-Sol.
+Para la mecánica newtoniana, estos tres astros son entes distintos, con propiedades independientes. Así, en cada instante el Sol, la Tierra y la Luna 
+cuentan con posiciones y velocidades bien definidas. El efecto de la interacción entre estos cuerpos se reduce entonces a cambiar las velocidades de 
+estos cuerpos en función de las posiciones de los otros. Este marco de trabajo, que podemos llamar \emph{reduccionista}, permite describir y predecir
+el comportamiento de la mayoría de los sistemas físicos macroscópicos en forma a la vez computacionalmente eficiente y precisa. Sin embargo, al tratar
+de aplicarlo a sistemas en la escala atómica comienza a mostrar sus fallas: en esta escala, el entrelazamiento implica que para ciertos estados 
+del sistema, las propiedades de las partes no estén bien definidas. Por ejemplo, el estado típico de una molécula de Hidrógeno no puede en general 
+describirse en términos de los estados de los átomos que la conforman: existen observables globales (la energía de la molécula, el impulso angular) 
+que no son  compatibles con los observables asociados a los átomos por separado. Esto nos obliga en mecánica cuántica a tratar los sistemas compuestos 
+desde una perspectiva \emph{holística}, en el sentido de que debemos tratar al sistema como un todo. Una consecuencia inmediata es que la descripción exacta 
+de los sistemas cuánticos se vuelve mucho más compleja que la de su equivalente clásico.
+
+Sin embargo, no todos los sistemas cuánticos parecen requerir de una descripción que aborde toda esa complejidad potencial. Por ejemplo, el sistema 
+Tierra-Sol-Luna en sí es un sistema cuántico. La clave del éxito de su descripción clásica consiste en que en su evolución el estado de cada una de
+sus partes permanece bien definido. Decimos entonces que el sistema admite descripción en términos de  \emph{estados separables}. Por otro lado, la 
+molécula de Hidrógeno típicamente se encuentra en un estado en el que el estado de sus partes no está bien definido. Decimos por esto que su descripción
+requiere considerar \emph{estados entrelazados}.  Podemos decir entonces que cuanto más entrelazados se encuentren los estados típicos de un sistema 
+(en un dado régimen) más nos costará representarlos en forma precisa y eficiente a la vez.
+
+%Si bien la definición de entrelazamiento no parece ofrecer grandes dificultades, 
+La definición y evaluación
+de medidas que cuantifiquen el grado de entrelazamiento presente en un sistema es una tarea bastante más compleja, tanto desde un punto de vista formal 
+como práctico. En lo que resta del capítulo daremos una definición más formal de lo que es un  \emph{estado cuántico entrelazado} \cite{NC.00,V.07,Sch1,BDSW.96}. 
+Se introducirán entonces algunos elementos de la teoría de la información que nos permitirán definir medidas de entrelazamiento y de correlaciones cuánticas entre
+ partes de un sistema.
+ 
+%  En los capítulos siguientes, utilizaremos estas cantidades para estudiar algunos aspectos del comportamiento cadenas de espines en el régimen cuántico, 
+% % así como para analizar la aplicabilidad de la aproximación de \emph{Campo Medio Generalizado} para su descripción.
+
+\section{Operador Densidad y Entropía de Von Neumann}
+%Nos interesa ahora extender las definiciones previas a sistemas cuánticos
+%\cite{NC.00,V.07}.  
+%nte destacar desde el principio que no todas las
+%extensiones posibles son necesariamente triviales, y que no todas las desigualdades anteriores
+%continuarán siendo v\'alidas.
+El estado de un sistema cuántico 
+%que cuyos estados pertenecen a un espacio de Hilbert de dimensión finita $n$
+se puede caracterizar por un {\it operador densidad} (o
+matriz densidad) $\rho$, el cual es un operador hermítico de traza 1 y con todos sus autovalores no negativos:
+\begin{equation}\rho\geq 0\,,\;\;{\mathrm Tr}\rho=1\,.\end{equation}
+Este operador determina el valor medio de cualquier observable $O$: 
+% se puede determinar de la formaexpresi\'on
+%Recordemos que el valor medio de cualquier observable $O$ est\'a dado por
+\begin{equation}\langle O\rangle={\rm Tr}\,\rho\,O\,.\end{equation}
+La probabilidad de encontrar al sistema en un estado particular $|i\rangle$,
+(que supondremos normalizado) es entonces
+\begin{equation}
+p_i=\langle P_i\rangle={\rm Tr}\,\rho\,P_i=\langle i|\rho|i\rangle\,,
+\end{equation}
+donde $P_i=|i\rangle \langle i|$ es el proyector ortogonal sobre el estado $|i\rangle$.
+%Recordemos tambi\'en que si la descomposici\'on espectral de $O$ es $O=\sum_\nu    o_\nu|\nu\rangle\langle\nu|$,
+%la probabilidad de medir el valor $o_\nu$ ser\'a, asumiendo este no degenerado,
+%\[p_{\nu}=\langle \nu|\rho|\nu\rangle\,.\]
+%En el caso general,
+%\[p_{o_\nu}={\rm Tr}\rho\,P_{p_\nu}\]
+%siendo $P_{o_\nu}$ el proyector ortogonal sobre el autoespacio asociado. % al autovalor $o_\nu$.
+
+En el caso de un sistema cuántico en un estado puro
+$|i\rangle$, $\rho$ es entonces el proyector ortogonal sobre el espacio generado por $|i\rangle$:
+\begin{equation}\rho=|i\rangle\langle i|\,,
+\end{equation}
+y satisface $\rho^2=\rho$. En el caso general, la descomposición espectral de $\rho$ la escribiremos como
+%$\rho^2\leq\rho$ (es decir,
+%$\rho-\rho^2$ es un operador positivo).
+\begin{equation}\rho=\sum_i p_i|i\rangle\langle i|\,,\end{equation}
+donde $\{p_i,i=1,\ldots,n\}$ %con $n$ la dimensi\'on del espacio,
+son los autovalores de $\rho$ ($p_i\geq 0$, $\sum_i p_i=1$) y $\{|i\rangle,i=1,\ldots,n\}$ los
+correspondientes autovectores normalizados ($\langle i|i'\rangle=\delta_{ii'}$). El caso puro corresponde a $p_i=1$ para un cierto estado y 0 para todos los demás.
+En el caso general, tenemos $\rho^2\leq \rho$ (es decir, $\rho^2-\rho$ es un
+operador con autovalores $-p_i(1-p_i)$ negativos o nulos).
+
+%Recordemos que el valor medio de cualquier observable $O$ esta dado por
+La entropía de von Neumann\cite{NC.00,Wh,vn.27} se define como
+\begin{eqnarray}S(\rho)&=&-{\rm Tr}\,\rho\log\rho\\&=&
+-\sum_i p_i\log p_i\,,\end{eqnarray}
+y es una medida de la falta de información asociada al estado $\rho$. Tenemos $S(\rho)\geq 0$, con $S(\rho)=0$ únicamente 
+si $\rho$ es un estado puro ($\rho^2=\rho$).
+$S(\rho)$ será por el contrario máxima ($S(\rho)=\log n$ si el espacio de Hilbert del sistema tiene dimensión $n$) si el estado $\rho$ es máximamente ``mezclado''
+$\rho_n=I_n/n$, donde $I_n$ denota el operador identidad, tal que $p_i=1/n$ $\forall$ $i$.
+
+\section{Sistemas Compuestos y Estados Reducidos}
+
+Dados dos sistemas cuánticos distinguibles, que denotaremos como $A$ y $B$, con sendos espacios de Hilbert $\mathcal{H}_A$ y $\mathcal{H}_B$ 
+y espacio de Hilbert conjunto $\mathcal{H}_A\otimes \mathcal{H}_B$, el estado conjunto estará determinado por una cierta {\it 
+matriz densidad conjunta} $\rho_{AB}$. La entropía conjunta es por lo tanto
+\begin{equation}S(A,B)=S(\rho_{AB})=-{\rm Tr}\,\rho_{AB}\log \rho_{AB}\,.
+ \label{SAB}\end{equation}
+%Tenemos en mente, como caso t\'{\i}pico, dos sistemas distinguibles $A$, $B$
+%espacialmente separados,  aunque las siguientes expresiones son v\'alidas para
+%todo par $A$, $B$ con espacio conjunto accesible $H_A\otimes H_B$. 
+Un observable {\it local} en el sistema $A$ es un observable de la forma
+$O_A\equiv O_A\otimes I_B$, donde $I_B$ denota la identidad en $\mathcal{H}_B$. Su valor
+medio es entonces
+\begin{eqnarray}
+\langle O_A\rangle&=&{\rm Tr}\,\rho_{AB}O_A%\nonumber\\
+={\rm Tr}_A\, \rho_A O_A\,,
+\end{eqnarray}
+donde hemos definido la {\it matriz densidad reducida} \cite{NC.00,Wh}
+\begin{equation}
+ \rho_A={\rm Tr}_B\,\rho_{AB}\label{rhoa}\,\end{equation}
+la cual determina completamente los valores medios de todo observable local en $A$.
+Explícitamente, $\langle i|\rho_A|j\rangle=\sum_k\langle ik|
+\rho_{AB}|jk\rangle$, donde $|ik\rangle\equiv|i\rangle\otimes|k\rangle$ son
+los estados de una base producto ortonormal de $\mathcal{H}_A\otimes \mathcal{H}_B$. Análogamente,
+\[\rho_B={\rm Tr}_A\,\rho_{AB}\,,\]
+determina los valores medios de cualquier operador local $O_B$ en $B$. Las
+entropías locales son
+\[S(A)=-{\rm Tr}\,\rho_A\log\rho_A\,,\;\;\;
+ S(B)=-{\rm Tr}\,\rho_B\log\rho_B\,.\]
+El estado conjunto es no correlacionado si y solo si $\rho_{AB}=\rho_A\otimes
+\rho_B$, es decir, si y solo si es un estado producto, en cuyo caso
+sus autovalores son $p_{ij}=p_i^A p_j^B$ con $p_i^A$ y $p_j^B$ 
+los autovalores de $\rho_A$ y $\rho_B$ respectivamente.  
+%es decir, si est\'a completamente determinado por los operadores
+%densidad reducidos (o sea, por observaciones locales), en cuyo caso 
+%Esto corresponde al caso
+%de  v.a.\ independientes en sistemas clásicos.
+En tal caso las entropías
+satisfacen $S(A,B)=S(A)+S(B)$, como es fácil ver de la
+definición (\ref{SAB}).
+\section{Información  Mutua y Entropía Condicional}
+
+%Podemos definir ahora la {\bf entropía condicional} utilizando la %f\'ormula\cite{NC.00,Wh,OZ.01}:
+%\begin{eqnarray}S_1(A|B)&\equiv&S(A,B)-S(B)\label{qcond1}\\
+% &=&S(\rho_{AB})-S(\rho_B)\,.\label{qcond11}\end{eqnarray}
+%No obstante, es fundamental notar que esta cantidad {\it 
+%no es necesariamente positiva}. Es decir, la entrop\'{\i}a global
+%$S(A,B)$ puede ser {\it mayor}, pero también {\it menor} que las entrop\'{\i}as locales.
+%El caso menor se da en los estados {\it entrelazados}, que definiremos en detalle
+%en el pr\'oximo cap\'{\i}tulo, y del cual se dar\'a  un ejemplo en este cap\'{\i}tulo.
+
+%La segunda versión cuántica de la entropía condicional fue introducida por
+%Zurek en 2001 \cite{Zu1.01} y la discutiremos en el cap\'{\i}tulo 4 cuando describamos el {\it Quantum Discord}.
+% ({\it Discordancia Cuántica}).
+
+%En base a $S_1(X|Y)$, podemos definir la primera versión c\'uantica de
+Podemos ahora definir la {\bf información mutua} como % siguiendo las ecuaciones (\ref{mut1})--(\ref{mut2}):
+\begin{eqnarray}
+I(A:B)&=&S(\rho_A)+S(\rho_B)-S(\rho_{AB})\,.\label{qmut1}%\\
+%&=&S(A)-S_1(A|B)=S(B)-S_1(B|A)\label{qmut0}\\
+%&=&S(A)+S(B)-S(A,B)
+\end{eqnarray}
+Esta cantidad es una medida de la correlación (total) entre $A$ y $B$
+\cite{NC.00,Wh}. Si $\rho_{AB}=\rho_A\otimes\rho_B$, %$A$ y $B$ son no correlacionados,
+$S(\rho_{AB})=S(\rho_A)+S(\rho_B)$ y por lo tanto $I(A:B)=0$. En caso contrario 
+$I(A:B)>0$. 
+
+%A diferencia de $S_1(A|B)$, $S_1(A:B)$ es {\it positiva}: $S_1(A:B)\geq 0$. % tal como se demuestra en el ap\'endice. 
+Esta positividad de $I(A:B)$ es conceptualmente evidente: $S(A)+S(B)$ es una medida de la falta de
+información cuando s\'olo se dispone de información sobre los valores medios de todos los observables locales (es decir, cuando se conoce s\'olo $\rho_A$ y $\rho_B$), 
+ mientras que $S(A,B)$ mide la falta de información cuando se conoce además
+toda la información sobre las correlaciones,
+es decir, sobre todos los valores medios de observables generales del tipo $O_{AB}=O_A\otimes O_B$. Por lo tanto $S(A,B)\leq S(A)+S(B)$.
+
+Clásicamente, es decir, para sistemas descriptos por densidades de probabilidad, se tiene además 
+\begin{equation}
+S(A,B)\geq S(A),\;\;\;S(A,B)\geq S(B)\label{desc}\end{equation}
+Las entropías condicionales $S(A|B)$ y $S(B|A)$ pueden definirse como 
+\begin{equation}S(A|B)=S(A,B)-S(B),\;\;S(B|A)=S(A,B)-S(A)\label{Scond}\end{equation}
+y son por lo tanto cantidades no negativas en sistemas clásicos. 
+%Podemos as\'{\i} reescribir la informaci\'on mutua como 
+
+Sin embargo, la desigualdad (\ref{desc}) no sigue siendo válida en sistemas cuánticos, es decir, en sistemas descriptos por operadores densidad. En otras palabras, en sistemas cuánticos la entropía global puede ser menor que las entropías locales, y las entropías condicionales definidas como en (\ref{Scond}) pueden por lo tanto ser negativas. 
+
+
+A modo de ejemplo, consideremos un par de qubits o espines $1/2$
+en un estado de Bell, por ejemplo
+\begin{equation}|\Psi\rangle=\frac{|\!\!\uparrow\uparrow\rangle+
+|\!\!\downarrow\downarrow\rangle}{\sqrt{2}}
+ \label{bell1}\,,\end{equation}
+donde $|\!\!\uparrow\uparrow\rangle=|\!\!\uparrow\rangle\otimes|\!\!\uparrow\rangle$
+denota un estado con ambos espines en la dirección $z$ positiva. 
+%Este estado
+%lo reescribiremos, siguiendo la notación acostumbrada en información cuántica,
+%como
+% \begin{equation}|\Psi\rangle=\frac{|00\rangle+|11\rangle}{\sqrt{2}}\,.
+% \label{bell2}\end{equation}
+El estado $\rho=|\Psi\rangle\langle\Psi|$ es un estado puro y por lo tanto, 
+%Para este estado, obviamente 
+\[S(\rho_{AB})=0\,.\] 
+%(pues $\rho_{AB}=|\Psi\rangle\langle\Psi|$
+%orresponde a un estado puro ($\rho_{AB}^2=\rho_{AB}$))
+No obstante, los estados reducidos son máximamente mezclados: 
+\[\rho_A=\rho_B=\frac{1}{2}I_2=\frac{1}{2}(|\uparrow\rangle\langle \uparrow|+|\downarrow\rangle\langle \downarrow|)\,.\]
+%es decir, las matrices densidad reducidas est\'an m\'aximamente mezcladas
+Por lo tanto,
+\begin{equation}
+S(\rho_A)=S(\rho_B)=1\,,\end{equation}
+tomando el logaritmo en base $2$.  Esto implica $S(A)=S(B)>S(A,B)=0$, a diferencia de cualquier sistema clásico. M\'as aun, los estados locales están máximamente mezclados (es decir, máximamente ``desordenados'') a pesar de  que el estado global es puro (es decir, máximamente ``ordenado''). Para este estado tenemos entonces 
+\[I(A:B)=2\]
+\[S(A|B)=S(B|A)=-1\,.\]
+Como veremos a continuación, la violación de las desigualdades clásicas (\ref{desc}) puede darse solo cuando el estado $\rho$ es entrelazado. 
+
+%Este estado es un estado máximamente entrelazado de dos qubits, en el que el
+%sistema conjunto está ``máximamente ordenado'' (está en un estado puro) pero el
+%sistema local está máximamente desordenado. %Esto es imposible en el caso cl\'asico, ya que si $p_{ij}=1$ para un cierto par $(i,j)$ (y 0 para los restantes) entonces
+%necesariamente $p^A_i=p^B_j=1$ y entonces $S(A)=S(B)=0$.
+%Este estado conduce pues a un caso
+%extremo de no extensividad: Mientras que $S(A)=S(B)=1$, la entropía global $S(A,B)$, lejos de ser
+%igual a la suma, es {\bf nula}.
+
+%Puede tambi\'en afirmarse que el estado de Bell corresponde a un caso de correlaci\'on extremo,
+%sin an\'alogo cl\'asico, en el que
+%\[S_1(A:B)=S(A)+S(B)-0=2\]
+%En el caso de dos sistemas cl\'asicos binarios, el valor m\'aximo de $S(A:B)$ es 1 y
+%corresponde a $p_{ij}=\delta_{ij}/2$, es decir a un sistema en el que ambos estan o bien
+%en el estado $0$, o bien en el estado $1$, con igual probabilidad.
+
+%Finalmente, mencionemos que todo el formalismo estadístico clásico se recupera
+%como caso particular del cuántico si nos restringimos a operadores densidad
+%conjuntos de la forma
+%\begin{equation}\rho=\sum_{i,j}p_{ij}|ij\rangle\langle ij|
+%\label{rhoclas}\end{equation}
+%es decir, diagonales en una base
+%producto $\{|ij\rangle=|i\rangle\otimes|j\rangle$\},
+%y a observables que son diagonales en esta base (y por lo tanto conmutantes y simult\'aneamente medibles).
+%En este caso,
+%las matrices densidad reducidas son $\rho_A=\sum_{i}p_i^A|i\rangle\langle i|$,
+%$\rho_B=\sum_j p_j^B|j\rangle\langle j|$ y quedan completamente determinadas
+%por las distribuciones marginales $p_i^A=\sum_j p_{ij}$,
+%$p_j^B=\sum_i p_{ij}$, como en el primer cap\'{\i}tulo. Los valores medios de
+%observables diagonales $O_{AB}$, $O_A$ y $O_B$ son pues determinados puramente
+%por la distribuciones $p_{ij}$, $p^A_{i}$ y $p^B_{i}$
+%respectivamente.
+
+%\section{Apéndice} Demostremos que la entropía mutua cuántica es también positiva
+%\cite{Wh}:
+%\[S_1(A:B)\geq 0\,,\]
+%con $S_1(A:B)=0$ si y solo si $\rho_{AB}=\rho_A\otimes\rho_B$. \\
+%Utilizando la misma propiedad anterior del logaritmo, y escribiendo
+%\[\rho_{AB}=\sum_\nu p_\nu|\nu\rangle\langle\nu|,  \;\;
+%\rho_A%={\rm Tr}_B\,\rho_{AB}
+%=\sum_{i} p_i^A|i\rangle\langle i|\,,\;\;
+%\rho_B%={\rm Tr}_A\,\rho_{AB}
+%=\sum_{j} p_j^B|j\rangle\langle j|\,,\]
+%con $p_i^A=\sum_{\nu,j}p_\nu|\langle ij|\nu\rangle|^2\,,
+%\;\;p_j^B=\sum_{\nu,i}p_\nu|\langle ij|\nu\rangle|^2\,,$
+%y $|ij\rangle=|i\rangle\otimes |j\rangle$ los estados de una base producto
+%ortonormal formada por los autoestados de $\rho_A$ y $\rho_B$, se tiene,
+%utilizando nuevamente  que
+% $\log x\leq x-1$,
+%\[S_1(A:B)=-\sum_{i,j,\nu}p_\nu|\langle ij|\nu\rangle|^2\log\frac{p_i^A p_j^B}{p_\nu}
+%\geq \sum_{i,j,\nu}p_\nu|\langle ij|\nu\rangle|^2(\frac{p_i^A p_j^B}{p_\nu}-1)
+% =1-1=0\]
+%donde la igualdad se cumple solo si $p_i^A p_j^B=p_\nu$ para algún $\nu$
+%$\forall$  $i,j$, es decir si $p_\nu=p_i^A\,p_j^B$ con
+%$|\nu\rangle=|ij\rangle$.
+
+\section{Entrelazamiento de Estados Puros}
+Si un estado cuántico puro $|\Psi_{AB}\rangle$ de un sistema conjunto $A+B$ se puede escribir como
+estado producto, no posee entrelazamiento y se lo denomina  {\it separable}. Por otro lado un estado {\it entrelazado} no puede descomponerse en un producto de estados: 
+\begin{eqnarray}|\Psi_{AB}\rangle=|\Psi_A\rangle|\Psi_B\rangle&\Rightarrow&|\Psi_{AB}\rangle\;separable\\
+ |\Psi_{AB}\rangle\neq |\Psi_A\rangle|\Psi_B\rangle&\Rightarrow&|\Psi_{AB}\rangle\; entrelazado
+ \label{QE1}\end{eqnarray}
+Las entropías de los subsistemas de un estado puro son idénticas (v\'ease (\ref{rred}) y permiten definir la {\it entropía de entrelazamiento} \cite{NC.00,Sch1},  que cuantifica el {\bf entrelazamiento} de un estado cuántico puro bipartito, como 
+\begin{equation}E(A,B)=S(A)=S(B)\,.\label{EAB}\end{equation}
+$E(A,B)$ es una medida de las correlaciones
+cuánticas en el estado. Si $|\Psi_{AB}\rangle$ es separable, entonces $\rho_A=|\Psi_A\rangle\langle
+\Psi_A|$, $\rho_B=|\Psi_B\rangle\langle\Psi_B|$ y $E(A,B)=0$.
+
+En el caso puro $E(A,B)$ es menos la entropía condicional:
+\begin{equation}S(A|B)=S(B|A)=-E(A,B)\,,\end{equation}
+pues $S(A,B)=0$. Mientras que la correspondiente información mutua es
+\begin{equation}I(A:B)=S(A)-S(A|B)=2S(A)=2E(A,B)\,.\end{equation}
+Podemos considerar a $I(A:B)$ como una medida de todas las correlaciones
+en el sistema, mientras que a $E(A,B)$ como una medida de correlaciones
+puramente cuánticas.
+
+Una forma de determinar si un estado cuántico es entrelazado es a través de la
+{\it descomposición de Schmidt} del estado \cite{NC.00}:
+Existen siempre bases locales $\{|k_A\rangle\}$ y $\{|k_B\rangle\}$
+ortonormales, en las que $|\Psi\rangle$ puede escribirse en la forma
+\begin{equation}|\Psi\rangle=\sum_{k=1}^{n_s} \sigma_k|k_A\rangle|k_B\rangle
+\,,\label{SD}
+\end{equation}
+donde $n_s$ es el número de Schmidt y $\sigma_k>0$,
+$\sum_{k=1}^{n_s}\sigma_k^2=1$. Las matrices densidad
+reducidas están entonces dadas por
+\begin{equation}\rho_A=\sum_{k} \sigma_k^2|k_A\rangle\langle k_A|\,,\;\;
+\rho_B=\sum_{k} \sigma_k^2|k_B\rangle\langle k_B|\label{rred}\,.\end{equation}
+Estas son isospectrales por lo que $S(A)=S(B)$.
+%\begin{eqnarray}\rho_A&=&{\rm Tr}_B |\Psi\rangle\langle\Psi|
+%=\sum_{k} \sigma_k^2|k_A\rangle\langle k_A|,\\
+%\rho_B&=&{\rm Tr}_A |\Psi\rangle\langle\Psi|
+% =\sum_{k}\sigma_k^2|k_B\rangle\langle k_B|\,,\end{eqnarray}
+%siendo pues estas bases locales (denominadas bases de Schmidt) justamente las
+%que diagonalizan los operadores densidad reducidos. Estos son pues siempre
+%isospectrales, implicando $S(A)=S(B)$.
+El caso separable corresponde a $n_s=1$,
+donde  $E(A,B)=0$, mientras que el caso entrelazado a $n_s\geq 2$, en el que
+\begin{equation}E(A,B)=-\sum_{k=1}^{n_s}\sigma_k^2\log (\sigma_k^2)
+\label{EAB2}
+\end{equation}
+La descomposición de Schmidt puede obtenerse a partir de la
+{\itshape descomposición en valores singulares} de la matriz de los coeficientes
+de expansión de $|\Psi\rangle$ en una base producto ortogonal, arbitraria
+\cite{NC.00}, siendo los $\sigma_k$ los valores singulares de dicha matriz.
+En el caso del estado de Bell (ecuación \ref{bell1}), ya está
+expresado en una base de Schmidt, con $n_s=2$ y
+$\sigma_1=\sigma_2=1/\sqrt{2}$. 
+
+El entrelazamiento es considerado un {\it recurso
+esencial} en información cuántica \cite{NC.00,V.07}, ya que permite formas
+radicalmente nuevas de intercambio y procesamiento de la información,
+tales como la teleportación cuántica \cite{t.93} y la computación cuántica \cite{NC.00}. 
+% imposibles de simular eficientemente en sistemas clásicos.
+
+\section{Entrelazamiento de Estados no Puros}
+La definición de entrelazamiento cuántico es m\'as compleja para estados $\rho$ generales 
+no necesariamente puros ($\rho^2\leq\rho$). De hecho, en el caso general no es posible obtener un m\'etodo general 
+para determinar si el estado es entrelazado, en un n\'umero finito de pasos. Por lo tanto tampoco es posible
+obtener una medida computable del mismo.
+
+%entrelazamiento, e incluso, no est\'a a\'un resuelto el problema formal
+%de definir una medida de todas las correlaciones cuánticas en estados no puros.
+
+Según la definición introducida por R.F. Werner en 1989 \cite{W.89}, un estado
+cuántico general es {\it entrelazado} si no es {\it separable} o {\it clásicamente correlacionado}, 
+en cuyo caso puede ser escrito como una combinación convexa de estados producto, es decir,
+una superposición estadística de estados no correlacionados:
+\begin{eqnarray}\rho=\sum_{\alpha} q_\alpha \rho_A^\alpha\otimes\rho_B^\alpha,
+\;\;q_\alpha\geq 0,\;&\Rightarrow & \rho\;separable\label{rs2}\\
+\rho\neq \sum_{\alpha} q_\alpha \rho_A^\alpha\otimes\rho_B^\alpha,
+ \;\;q_\alpha\geq 0,&\Rightarrow& \rho\;entrelazado\end{eqnarray}
+donde $\sum_\alpha q_\alpha=1$. En particular, un estado producto
+$\rho_{AB}=\rho_A\otimes\rho_B$, es decir, un estado no correlacionado, es un
+estado separable. Pero también lo es cualquier combinación convexa de los
+mismos. El argumento \cite{W.89} es que los estados separables pueden ser
+generados mediante operaciones locales y comunicación clásica (es decir, por
+({\it LOCC: Local Operations and Classical Communication}) \cite{NC.00}) y por lo tanto no
+contienen correlaciones cuánticas.
+`
+En otras palabras, dos personas a cierta distancia pueden, a través de comunicación clásica, acordar
+preparar un estado producto $|\Psi_A\rangle|\Psi_B\rangle$, pero también una combinación
+estadística de estados producto: $A$ tira un dado y de acuerdo al valor de este
+prepara $|\Psi^\alpha_A\rangle$, $\alpha=1,\ldots,6$ y avisa a $B$, quien
+prepara el correspondiente estado $|\Psi^\alpha_B\rangle$, originando as\'{\i}
+una combinación convexa del tipo (\ref{rs2})
+($\rho=\sum_{\alpha=1}^6\frac{1}{6}|\Psi_A^\alpha\rangle\langle\Psi_A^\alpha|\otimes|\Psi_B^\alpha\rangle
+\langle\Psi_B^\alpha|$).
+
+Por otro lado un estado entrelazado no puede ser
+escrito de la forma anterior con coeficientes $q_\alpha$ positivos. Estos se generan únicamente por medio de una 
+interacción cuántica entre los sistemas. Pueden generarse como autoestados de un Hamiltoniano que contenga t\'erminos de interacción $\sum_\alpha o^\alpha_{A}\otimes o^\alpha_B$, o haciendo evolucionar 
+un estado inicialmente separable con un Hamiltoniano del tipo anterior \cite{NC.00,RS.07} (de forma que el operador evolución 
+$U(t)=\exp[-iH t/\hbar]$ no sea un producto de operadores de evolución
+locales $U_A(t)\otimes U_B(t)$ ).
+%  o sencillamente como estados cu\'anticas, es decir, por medio de
+
+Los estados $\rho$ diagonales en una base producto: $\rho=\sum_{i,j}p_{ij}|ij\rangle\langle ij|
+\label{rhoclas}$ 
+% (discutidos en el cap\'{\i}tulo anterior) 
+son un caso particular de estado separable.
+En el caso general, los distintos t\'erminos en (\ref{rs2}) no son necesariamente conmutantes.
+
+En el caso puro, la definición (\ref{rs2}) coincide por supuesto con la previa
+dada en la ecuación (\ref{QE1}): Si $\rho_{AB}^2=\rho_{AB}$, la combinación convexa
+(\ref{rs2}) es necesariamente un estado producto $\rho_A\otimes\rho_B$,
+con $\rho_A$ y $\rho_B$ puros.
+
+\section{Criterios Básicos de Separabilidad} 
+En general, excepto en casos simples como el de dos qubits, no es f\'acil determinar si un estado no puro,
+es separable o entrelazado. En realidad es un problema considerado en general `` {\it hard} '' \cite{Gr.01}.
+
+El {\bf criterio de la traspuesta parcial}, introducido por Asher Peres en 1996
+\cite{P.96}, proporciona un criterio de separabilidad simple, computable y necesario, pero en general no suficiente. Es decir,
+\begin{equation}
+\rho_{AB}\;{separable}\;\Rightarrow
+\rho_{AB}^{t_A}\geq 0\,,
+\end{equation}
+%o sea,
+%\begin{equation}
+%\rho_{AB}^{t_A}\,<\,0\;\Rightarrow
+% \rho_{AB}\;{entrelazado}\;\,\end{equation}
+donde $t^A$ denota {\it trasposición parcial} \cite{NC.00}
+($\langle ij|\rho_{AB}^{t_A}|kl\rangle=\langle kj|\rho_{AB}|il\rangle$).
+%en una base producto). 
+Es decir, si $\rho_{AB}^{t_A}$ tiene algún autovalor negativo entonces $\rho_{AB}$ es entrelazado.
+Pero si todos sus autovalores son no-negativos puede ser aún entrelazado. S\'olo
+en el caso de dos qubits o qubit/qutrit, el presente criterio es {\it
+necesario y suficiente} \cite{P.96,Ho.96}.
+
+
+Interpretémoslo de otra forma: 
+Si tenemos $\PROYECT{ij}{kl}=\PROYECT ik\otimes\PROYECT jl$ entonces
+\[
+\PARENTESIS{\PROYECT{ij}{kl}}^{T_{B}}=\PROYECT{il}{kj}=\PROYECT ik\otimes\PROYECT lj
+\]
+
+Si $\rho_{AB}$ es separable entonces 
+\[
+\rho_{AB}^{T_{B}}=\sum_{\alpha}p_{\alpha}\PARENTESIS{\rho_{A}^{\alpha}\otimes\rho_{B}^{\alpha}}^{T_{B}}=\sum_{\alpha}p_{\alpha}\rho_{A}^{\alpha}\otimes\PARENTESIS{\rho_{B}^{\alpha}}^{T}
+\]
+
+La traspuesta de $\rho_{B}^{\alpha}$ no cambia los autovalores, entonces
+la traza sigue siendo 1. $\PARENTESIS{\rho_{B}^{\alpha}}^{T}=\rho_{B}^{\alpha}$,
+$\PARENTESIS{\PARENTESIS{\rho_{B}^{\alpha}}^{T}}^{T}=\PARENTESIS{\rho_{B}^{\alpha}}^{T}$,
+$Tr\PARENTESIS{\rho_{B}^{\alpha}}{}^{T}=Tr\rho_{B}^{\alpha}$
+
+Ej: 
+\[
+\KET{\psi_{AB}}=\frac{\KET{00}+\KET{11}}{\sqrt{2}}
+\]
+
+\[
+\rho_{AB}=\PROYECT{\psi_{AB}}{\psi_{AB}}=\frac{1}{2}\PARENTESIS{\LLAVEABAJO{\overset{}{\overset{\KET 0\BRA 0\otimes\KET 0\BRA 0}{\PROYECT{00}{00}}+\overset{\KET 1\BRA 1\otimes\KET 1\BRA 1}{\PROYECT{11}{11}}}}{\text{esto es separable }}+\PROYECT{00}{11}+\PROYECT{11}{00}}
+\]
+
+\[
+\rho_{AB}^{T_{B}}=\frac{1}{2}\PARENTESIS{\PROYECT{00}{00}+\PROYECT{11}{11}+\PROYECT{01}{10}+\PROYECT{10}{01}}
+\]
+
+\[
+\rho_{AB}^{T_{B}}=\frac{1}{2}\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right)
+\]
+
+vemos arriba como era $\rho_{AB}$ sin transponer y vemos como afecta.
+Los autovalores son
+
+\[
+\lambda\PARENTESIS{\rho_{AB}^{T_{B}}}=\PARENTESIS{\frac{1}{2},\frac{1}{2},\frac{1}{2},-\frac{1}{2}}
+\]
+cuando aplicamos la traza parcial a un estado entrelazado obtenemos
+un autovalor negativo, entonces aplicar la traza parcial me genera
+un $\rho_{AB}^{T_{B}}$ no es un operador densidad.
+
+Resumen: el criterio me dice que si $\rho_{AB}$ es separable entonces
+$\rho_{AB}^{T_{B}}\protect\geq 0$ entonces $\lambda\protect\PARENTESIS{\rho_{AB}^{T_{B}}}\protect\geq0$ 
+(es decir sigue siendo un operador densidad). El contrarecíproco sería
+que  $\rho_{AB}^{T_{B}}\cancel{\protect\geq}\,0$  es decir 
+$\exists\lambda_{i}\protect\PARENTESIS{\rho_{AB}^{T_{B}}}<0$,
+entonces $\rho_{AB}$ es entrelazado.
+
+
+
+
+
+%\section
+El {\bf criterio entrópico estándar} se basa en que los estados separables al 
+igual que los sistemas clásicos, son siempre más
+desordenados globalmente que localmente \cite{Ho.96}:
+\begin{equation}
+ \rho\;{\rm separable}\;\Rightarrow S(A,B)\geq S(A)\,, \label{CS}\end{equation}
+y análogamente, $S(A,B)\geq S(B)$. Corresponden pues a entropías condicionales
+$S(A|B)$ y $S(B|A)$ {\it positivas}. 
+
+Los estados entrelazados  pueden satisfacer, como vimos, $S(A,B)<S(A)$, pero a diferencia del caso puro, en el caso no puro esta condición no es necesaria: Existen también estados
+entrelazados que son más desordenados globalmente que localmente ($S(A,B)>S(A)$,
+$S(A,B)>S(B)$). 
+%en los que %las correlaciones cuánticas no se manifiestan pues a nivel entr\'opico. 
+Notemos también que en el caso no puro, $S(A)$ no es necesariamente igual a $S(B)$.
+
+El presente criterio entrópico ($\rho_{AB}$ separable $\Rightarrow$
+$S(A,B)\geq S(A)$) puede generalizarse en realidad a otras entropías (por ejemplo, del tipo
+$S(\rho)={\rm Tr}f(\rho)$, con $f$ c\'oncava y $f(0)=f(1)=0$ \cite{CR.02}), dando lugar al {\bf criterio entrópico generalizado} \cite{RC.02}, que es más
+fuerte que el criterio entrópico basado en la entropía de von Neumann
+\cite{Ho.96} y equivalente al criterio general de desorden \cite{NK.01}. 
+
+\section{Medidas de Entrelazamiento}
+
+La medida de entrelazamiento en estados no puros es un tema que no está
+cerrado y es aún más difícil. Usualmente se utiliza como medida el entrelazamiento de formación, 
+definido por la denominada ``{\it Convex Roof Extension}'' de la definición para
+estados puros \cite{V.07,BDSW.96}:
+\begin{equation}
+ E(A,B)\equiv E(\rho_{AB})=\mathop{\rm Min}_{\sum_i q_i|\Psi_i\rangle\langle \Psi_i|=\rho_{AB}}\,
+ \sum_i q_i\,E(|\Psi_i\rangle\langle\Psi_i|)\label{EABG}\end{equation}
+es decir, es el mínimo, entre todas las representaciones posibles  de
+$\rho_{AB}$ como combinación convexa de estados puros $|\Psi_i\rangle$ (no necesariamente ortogonales), del promedio del entrelazamiento en los mismos, 
+ definido de acuerdo a (\ref{EAB}). En general, la cantidad (\ref{EABG})
+no es computable de forma exacta. 
+
+\subsection{Concurrencia \label{Concu}}
+La gran excepción es el caso de dos qubits (o sea, dos sistemas con espacio de Hilbert 
+local de dimensión $2$, tal como un par de espines $1/2$), donde W.K. Wootters logró obtener una fórmula general computable en 1998 por
+medio de la llamada concurrencia $C_{AB}$ \cite{W.98}: 
+\begin{eqnarray}
+E(A,B)&=&-\sum_{\nu=\pm}q_\nu\log  q_\nu,\label{EABC}\end{eqnarray}
+donde 
+\begin{eqnarray}
+q_\nu&=&{\textstyle\frac{1\pm\sqrt{1-C^2(A,B)}}{2}}\,,\label{qEABC}\\
+C(A,B)&=&{\rm Max}[2\lambda_M-{\rm Tr}R,0]\,.
+\label{CAB}\end{eqnarray}
+Aquí $\lambda_M$ es el autovalor m\'aximo de la matriz
+$R=\sqrt{\rho_{AB}^{1/2}\tilde{\rho}_{AB} \rho_{AB}^{1/2}}$, con
+$\tilde{\rho}_{AB}=\sigma_y\otimes
+\sigma_y\rho_{AB}^{*}\sigma_y\otimes\sigma_y$ en la base estándar, 
+compuesta por los autoestados producto de $\sigma_{z}\otimes\sigma_z$. Aquí
+$\bm{\sigma}=(\sigma_x,\sigma_y,\sigma_z)$ denota las matrices de Pauli. 
+
+Se verifica 
+\begin{equation}
+0\leq C(A,B)\leq 1\,,\;\;0\leq E(A,B)\leq 1
+\end{equation}
+ con $E(A,B)=C(A,B)=1$  para  un estado de Bell (que es, por lo tanto, un estado m\'aximamente entrelazado), y 
+$E(A,B)=C(A,B)=0$ para un estado separable, siendo
+$E(A,B)$ una función estrictamente creciente de $C(A,B)$. 
+%Puede pues utilizarse tambi\'en $C(A,B)$ como medida de entrelazamiento.
+
+Para el caso de un estado puro arbitrario de dos qubits, se ve que
+(\ref{EABC}) se reduce a la entropía $S(A)=S(B)$ de cualquiera de los
+qubits, dada por la expresión (\ref{EAB2}) con $n_s=2$.
+En tal caso $C(A,B)=2\sqrt{\sigma_1\sigma_2}$.
+
+\subsection{Negatividad \label{negatividad}}
+La negatividad es un estimador de entrelazamiento computable para estados mixtos de cualquier dimensión \cite{VW.02,ZHSL.99,ZHSL.99b}, definida por 
+
+\begin{equation}
+N_{AB}=({\rm Tr}\,|\rho_{AB}^{\rm t_A}|-1)/2\label{N12}\,,\end{equation}
+donde $\rho_{AB}^{\rm t_2}$ denota la traspuesta parcial de $\rho_{AB}$. La Ec.\ (\ref{N12})
+es simplemente el valor absoluto de la suma de los autovalores negativos de $\rho_{AB}^{\rm t_A}$. 
+Si $\rho_{AB}$ es un estado puro   ($\rho_{AB}=|\psi_0\rangle\langle\psi_0|$), la  Ec.\ (\ref{N12})
+se reduce a una entropía de entrelazamiento generalizada,
+\begin{equation}N_{AB}=[({\rm Tr}\,\sqrt{\rho_A})^2-1]/2
+ =\sum_{i<j}\lambda_i^1\lambda^1_j\label{N12p}\end{equation}
+donde $\rho_A={\rm Tr}_B\,|\psi_0\rangle\langle\psi_0|$ 
+es el estado reducido de $A$  y $\lambda^1_i$ sus autovalores. En este caso el estado es entrelazado si y solo si $N_{AB}>0$. Consecuentemente, la Ec.\
+(\ref{N12p}) se anula para $\rho_A$ puro ($|\psi_0\rangle$ separable), y
+alcanza su máximo para $\rho_A$  máximamente mezclado (es decir, $|\psi_0\rangle$ máximamente entrelazado),
+en cuyo caso $N_{AB}=(d-1)/2$, con $d={\rm Min}[d_A,d_B]$ (en particular, $N_{AB}=s$  para un par de espines $s$). 
+
+En el caso mixto general, $N_{AB}>0$ implica entrelazamiento de $\rho_{AB}$, pero $N_{AB}=0$ no implica necesariamente separabilidad, salvo para sistemas qubit-qubit o qubit-qutrit \cite{Ho.96}, ya que existen ciertos estados mixtos entrelazados ({\it bound entangled states}) que igualmente cumplen $N_{AB}=0$. 
+No obstante, dada su computabilidad, $N_{AB}$ es corrientemente utilizada como una medida o estimador de entrelazamiento de estados mixtos. 
+
+Ejemplo: Sistema de 2 qubits
+
+\[
+\rho_{AB}=p\PROYECT{\psi_{AB}}{\psi_{AB}}+\PARENTESIS{1-p}\frac{I_{AB}}{4}
+\]
+
+$\frac{I_{AB}}{4}$ este es el estado máximamente mezclado.
+
+\textbf{¿Cuál es el valor umbral de p para que exista entrelazamiento?}
+
+\[
+\rho_{AB}=\left(\begin{array}{cccc}
+\frac{p}{2}+\frac{1-p}{4} & 0 & 0 & \frac{p}{2}\\
+0 & \frac{1-p}{4} & 0 & 0\\
+0 & 0 & \frac{1-p}{4} & 0\\
+\frac{p}{2} & 0 & 0 & \frac{1-p}{4}
+\end{array}\right)
+\]
+
+Si hacemos la transpuesta parcial, 
+\[
+\rho_{AB}^{T_{B}}=\left(\begin{array}{cccc}
+\frac{p}{2}+\frac{1-p}{4} & 0 & 0 & 0\\
+0 & \frac{1-p}{4} & \frac{p}{2} & 0\\
+0 & \frac{p}{2} & \frac{1-p}{4} & 0\\
+0 & 0 & 0 & \frac{1-p}{4}
+\end{array}\right)
+\]
+
+\[
+\lambda\PARENTESIS{\rho_{AB}^{T_{B}}}=\PARENTESIS{\frac{p}{2}+\frac{1-p}{4},\frac{p}{2}+\frac{1-p}{4},\frac{p}{2}\pm\frac{1-p}{4}}
+\]
+
+\[
+\frac{1-p}{4}-\frac{p}{2}<0\rightarrow1-3p<0\rightarrow p>\frac{1}{3}
+\]
+\subsection{Testigo de entrelazamiento}
+
+Un testigo de entrelazamiento es un operador autoadjunto $O_{AB}$
+tal que $Tr\rho_{AB\,sep}O_{AB}\geq0$ $\forall\rho_{AB\:sep}$. Pero,
+dado un cierto $\rho_{AB}^{E}$ entrelazado $Tr\rho_{AB}^{E}O_{AB}<0$
+(esto vale solo para un cierto $\rho_{AB}^{E}$ no para todos).
+
+\paragraph{Dado $\rho_{AB}$ entrelazado $\exists$ $O_{AB}$ tal que $Tr\rho_{AB}O_{AB}<0$,
+pero la traza de cualquier operador separable $Tr\rho_{AB}^{S}O_{AB}\protect\geq0$
+$\forall\rho_{AB}^{S}$. }
+
+\textbf{Demostración}
+\begin{center}
+\includegraphics[scale=0.5]{\string"fig clase 1809\string".pdf}
+\par
+\end{center}
+
+\textbf{1) }El conjunto de todos los $\rho$ de un sistema físico
+es un conjunto convexo. Quiere decir que si $\rho_{1}$ es operador
+densidad y $\rho_{2}$ es operador densidad entonces $p\rho_{1}+(1-p)\rho_{2}$
+es un operador densidad $\forall p\in\CORCHETES{0,1}$. 
+
+Entonces si supongamos que este es el conjunto de los operadores densidad
+y el borde de los $\rho$ son los estados puros. Todo conjunto convexo
+se pueden generar a partir de unos estados borde, estados límite.
+Porque del punto de vista matemático un punto que está en el medio
+entre dos estados de borde lo puedo escribir como combinación lineal
+de dos estados de borde de la forma $p\rho_{1}+(1-p)\rho_{2}$.
+
+Dentro del conjunto convexo de todos los operadores densidad de un
+sistema dado. En el borde estados puros. Adentro está el conjunto
+de los $\rho$ separables.
+
+\textbf{2) }El conjunto de los operadores densidad separables para
+un dado sistema físico es convexo. La robustes de un operador separable
+que mezclas cosas y seguis estando ahí adentro no la tienen los operadores
+producto, una mezcla de producto no es un operador producto. Por eso
+el concepto de separabilidad es importante.
+
+\[
+\begin{array}{c}
+\rho_{1}=\sum_{\alpha}p_{\alpha}^{1}\rho_{A}^{1\alpha}\otimes\rho_{B}^{1\alpha}\\
+\rho_{2}=\sum_{\alpha}p_{\alpha}^{2}\rho_{A}^{2\alpha}\otimes\rho_{B}^{2\alpha}
+\end{array}\Rightarrow q\rho_{1}+(1-q)\rho_{2}=\sum_{\alpha}qp_{\alpha}^{1}\rho_{A}^{1\alpha}\otimes\rho_{B}^{1\alpha}+(1-q)p_{\alpha}^{2}\rho_{A}^{2\alpha}\otimes\rho_{B}^{2\alpha}
+\]
+
+Esto sigue siendo un operador densidad separable, mientras $q\in\CORCHETES{0,1}$. 
+
+\textit{Desde el punto de vista físico la propiedad de convexidad es importante
+porque te esta diciendo que si yo genero algo en este conjunto y hago
+mezclas de eso, es decir que por ej. si tiro un dado cuando en el
+dado sale 1 genero un cierto estado separable, cuando me sale 2 otro,
+y así, y el estado promedio que sale es un estado separable también.
+Es decir mezclando esas cosas no me voy del conjunto. \\}
+
+El conjunto de estados producto no es convexo, porque no son conmutantes.
+Los estados separables tienen en general autoestados entrelazados,
+ie el hecho que sea una combinación convexa de productos como estos
+estados $\PARENTESIS{\rho_{AB}=\sum_{\alpha}p_{\alpha}\rho_{A}^{\alpha}\otimes\rho_{B}^{\alpha}}$
+que estamos sumando, donde cada $\alpha$ es un índice de estado $\rho_{A}$,
+$\rho_{B}$ cualquiera donde no tienen porque ser conmutantes, son
+suma de productos no conmutantes. Al sumar todo esto al ser no conmutantes,
+si uno analiza esto, no todos o una buena parte son entrelazados.
+Pero aún así el estado separable es generable por operaciones locales
+y conmunicación clásica LOCC. 
+
+Notar que el conjunto de los operadores densidad $\rho$ se toca en
+sólo punto con el de los $\rho_{s}$, es un punto donde es separable
+y puro al mismo tiempo y es uno sólo porque \textbf{implica} que $\rho$
+es un producto
+\[
+\rho=\KET{k_{A}}\KET{k_{A}}\otimes\BRA{k_{B}}\BRA{k_{B}}\rightarrow\rho=\KET{\psi_{AB}}\BRA{\psi_{AB}}
+\]
+
+Volvamos a la \textbf{demostración}, supongamos que tenemos un $\rho_{AB}$
+entrelazado, y tenemos la recta roja que me divide el espacio en 2
+semiplanos (sup que estamos en 2 d)
+\begin{center}
+\includegraphics[scale=0.5]{\string"fig clase 1809- 2\string".pdf}
+\par
+\end{center}
+
+Esto pasa a $\GREEN{Tr\rho_{AB}O_{AB}\geq0}$ y a $\BLUE{Tr\rho_{AB}O_{AB}\geq0}$,
+siendo los coeficientes $a,\:b,\:c$ sería el operador testigo $O_{AB}$
+y las coordenadas $x,\:y$ son los elementos del operador $\rho_{AB}$
+en una base de operadores y esta condición sobre $Tr\rho_{AB}O_{AB}$
+es una proyección lineal de $\rho_{AB}$ sobre alguna base. El hecho
+que $\rho^{s}$ sea convexo hace que exista una recta entre $\rho$
+entrelazado y $\rho^{s}$, entonces se prende la <<lámparita>> cuando
+estoy de uno de los lados.$\blacksquare$
+
+Podemos ver que el entrelazamiento es muy débil porque ponele que
+genero un estado que este del lado izquierdo que caiga fuera del conjunto
+de los separables, eso no es un conjunto convexo entonces me va a
+fallar. Es decir, en cuanto tenga probabilidad de generar un entrelazado
+ahí se cae el entrelazamiento, y eso puede pasar si hay ruido. En
+cambio con los separables no pasa eso.
+
+\textbf{El conjunto de estados entrelazados no es convexo.}
+
+\subsubsection{Ejemplo}\label{Ej.entrelazamiento}
+Supongamos que tenemos los estados de Bell 
+
+\[
+\left\{ \begin{array}{c}
+\KET{\psi_{\underset{01}{00}}}=\frac{\KET{00}\pm\KET{11}}{\sqrt{2}}\\
+\KET{\psi_{\underset{11}{10}}}=\frac{\KET{01}\pm\KET{10}}{\sqrt{2}}
+\end{array}\right\} \text{base de estados de 2 qubits de }\COMPLEJOS^{2}\otimes\COMPLEJOS^{2}
+\]
+
+\begin{center}
+\begin{quantikz}  \lstick{$\ket{i}$} & \gate{H} & \ctrl{1} & \midstick[2,brackets=none]{$\ket{\psi_{ij}}$}\qw\\  \lstick{$\ket{j}$} & \qw & \octrl{-1} & \qw \end{quantikz} 
+\par
+\end{center}
+
+Tenemos que el estado $\PROYECT{\psi_{ij}}{\psi_{ij}}$ es entrelazado
+pero 
+\[
+\sum_{i,j=0}^{1}\PROYECT{\psi_{ij}}{\psi_{ij}}\frac{1}{4}=\frac{I_{AB}}{4}\text{ es el estado máximamente mezclado}
+\]
+Como la identidad es la identidad en todas las bases, entonces lo
+anterior es igual a 
+
+\[
+=\frac{1}{4}\sum_{i,j=0}^{1}\KET i\KET j\BRA i\BRA j=\frac{1}{4}\PARENTESIS{\KET{00}\BRA{00}+\KET{01}\BRA{01}+\KET{10}\BRA{10}+\KET{11}\BRA{11}}
+\]
+genero un ruido al azar. Esto implica que las medidas de entrelazamiento
+no son cóncavas sino son convexas ie el entrelazamiento de una mezcla
+tiene que ser menor que la mezcla de entrelazamientos. El entrelazamiento
+de un promedio siempre es menor o igual que el promedio de los entrelazamientos. 
+
+\section{Fidelidad} 
+La fidelidad \cite{NC.00} es una medida de la distancia entre dos estados cuánticos (puros o no puros).
+Se define como 
+\begin{equation}
+F(\rho,\rho')={\rm Tr}\,\sqrt{\rho^{1/2}\rho'\rho^{1/2}}\,.
+\end{equation}
+Para estados puros $\rho=|\psi\rangle\langle\psi|$, 
+$\rho'=|\psi'\rangle\langle\psi'|$, $F(\rho,\rho')$ se reduce al modulo del {\it overlap}:
+\begin{equation}
+F(\rho,\rho')=|\langle \psi|\psi'\rangle|\,.\end{equation}
+En ambos casos, la fidelidad es un número entre $0$ y $1$,
+\[0\leq F\leq 1\,,\]
+con $F(\rho,\rho')=1$ si y solo si $\rho=\rho'$ y $F(\rho,\rho')=0$ si y solo si $\rho$ y $\rho'$ tienen soportes ortogonales. 
+
+La fidelidad está relacionada con otra cantidad que mide cuan diferentes son dos estados, conocida como medida o m\'etrica de Wootters. Esta última puede evaluarse en función de la primera por la relación
+
+\begin{equation}
+B(\rho,\rho')=\arccos F(\rho,\rho') 
+\label{metric}
+\end{equation}
+
+Esta medida define una distancia entre los operadores estadísticos, ya que es una cantidad semidefinida positiva y simétrica que satisface la desigualdad triangular 
+($B(\rho,\rho')\leq B(\rho,\rho'')+B(\rho'',\rho')$). 
+
+\subsection{Entrelazamiento de formación}
+
+Miremos primero como calculo el valor medio de la energía
+
+\[
+\VALMEDIO H=Tr\rho H
+\]
+con $H$ un hamiltoniano, con $\rho=\sum_{i}p_{i}\PROYECT ii$, luego
+$\VALMEDIO H=\EXPECT ii H=\sum_{i}\EXPECT ii H p_{i}$
+implica un valor medio cuántico con distribución de probabilidad y
+un valor medio clásico con $p_{i}$.
+
+Nosotros sabemos que el entrelazamiento de un estado puro $E\PARENTESIS{\KET{\psi_{AB}}}=S\PARENTESIS{\rho_{A}}=S\PARENTESIS{\rho_{B}}$,
+con $\rho_{A}=Tr_{B}\PROYECT{\psi_{AB}}{\psi_{AB}}$, entonces uno
+podría definir (haciendo un razonamiento para comenzar, luego veremos que en realidad es incorrecto)
+ $E\PARENTESIS{\rho_{AB}}=\sum_{i}p_{i}E\PARENTESIS{\KET{\psi_{AB}}}$,
+esta definición no tiene sentido por el ejemplo que vimos recién de estados
+de Bell \ref{Ej.entrelazamiento}, si aplico esta definición de entrelazamiento a la expresión
+a una mezcla de estados de Bell me da 1 y si lo aplico a una mezcla
+de estados producto me da 0, es decir me queda $0=1$. Tiene que ser
+una propiedad del vector pero no debe depender de la representación
+que elija al vector. 
+
+Definimos al \textit{entrelazamiento de formación} como
+
+\[
+E\PARENTESIS{\rho_{AB}}=\underset{\LLAVES{p_{i}\KET{\psi_{AB}^{i}}/\sum_{i}p_{i}\PROYECT{\psi_{AB}^{i}}{\psi_{AB}^{i}}=\rho_{AB}}}{\text{Min}}\sum_{i}p_{i}E\PARENTESIS{\KET{\psi_{AB}^{i}}}
+\]
+ Tomo el mínimo sobre todas las representaciones. Esto es consistente
+ya que cumple que $E\PARENTESIS{\rho_{AB}}\ge0$, $E\PARENTESIS{\rho_{AB}}=0\iff\rho_{AB}\text{ separable}$. 
+
+Este no es un criterio necesario y suficiente porque está muy bien
+pero no es computable (no es física, porque tenés que pensar sobre
+todas las posibles mezclas que te da un estado, es un espacio infinito). 
+
+\textbf{Caso de 2 qubits. Wootters}
+
+Logró evaluar de forma analítica $E\PARENTESIS{\rho_{AB}}$ $\forall\rho_{AB}$
+de 2 qubits.
+
+\subsection{Fórmula de Wootters (2 qubits) }
+
+\[
+E\PARENTESIS{\rho_{AB}}=-\sum_{i=0,1}p_{i}\log p_{i}=S\PARENTESIS{\rho_{A}}=S\PARENTESIS{\rho_{B}}
+\]
+
+Donde $p_{\overset{0}{1}}=\frac{1\pm\sqrt{1-c^{2}}}{2}$, con $c$
+la concurrencia. Siendo $c=2\lambda_{max}(R)-Tr(R)$ y $R=\sqrt{\rho_{AB}^{1/2}\tilde{\rho}_{AB}\rho_{AB}^{1/2}}$,
+con $\tilde{\rho}_{AB}=\sigma_{y}\otimes\sigma_{y}\rho_{AB}^{*}\sigma_{y}\otimes\sigma_{y}$. 
+
+Para \textbf{estados puros} $E\PARENTESIS{\rho_{AB}}=S\PARENTESIS{\rho_{A}}=S\PARENTESIS{\rho_{B}}$.
+Para estados mezcla $S\PARENTESIS{\rho_{A}}\neq S\PARENTESIS{\rho_{B}}$
+y no mide ni entrelazamiento ni correlación. 
+
+Para estados puros la concurrencia la podemos calcular como $c\PARENTESIS{\rho_{AB}}=\sqrt{1-Tr\PARENTESIS{\rho_{AB}^{2}}}$,
+es decir todas las medidas de correlación o entrelazamiento bien definidas
+cuando son medidas para un estado puro deben reducirse a una medida
+de entropía de estado local (no necesariamente la de Shannon). La
+$Tr\PARENTESIS{\rho_{AB}^{2}}$ se llama pureza, ya que da 1 para
+estados puros ya que $\rho_{AB}^{2}=\rho_{AB}$.
+
+
+
+

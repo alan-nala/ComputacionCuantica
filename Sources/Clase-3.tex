@@ -1,0 +1,308 @@
+\chapter{Clase 3: 04/09}
+
+La mecánica estadística se justifica como consecuencia de un entrelazamiento
+de un estado con su entorno.
+
+Dado un estado entrelazado de 2 qubits
+
+\[
+\KET{\psi_{AB}}=\frac{\KET{00}+\KET{11}}{\sqrt{2}}\ACLARACION{\text{el de la derecha es un estado mezcla estadística}}{\neq}\frac{\PROYECT{00}{00}+\PROYECT{11}{11}}{2}
+\]
+
+Esta fundamentación general de mecánica estadística parte de que cuando
+uno tiene este estado simple entrelazado y hacemos 
+\[
+Tr_{B}\PROYECT{\psi_{AB}}{\psi_{AB}}=Tr_{B}\PARENTESIS{\frac{\PARENTESIS{\KET{00}+\KET{11}}\PARENTESIS{\BRA{00}+\BRA{11}}}{2}}
+\]
+
+\[
+=\sum_{\mu=0,1}\BRAKETEO{\mu_{0}}{\psi_{AB}}\BRAKETEO{\psi_{AB}}{\mu_{0}}=\frac{1}{2}\PARENTESIS{\PROYECT 00+\PROYECT 11}=\rho_{A}
+\]
+
+\[
+\EXPECT{\psi_{AB}}{\psi_{AB}}{O_{A}\otimes I_{B}}=Tr\rho_{A}O_{A}
+\]
+
+Para ver los estados fundamentales se estudian sistemas de 2 qubits
+haces trazas parcial y ya ves que se genera un estado mezcla (estado
+térmico).
+
+\section{Aplicaciones: }
+
+\subsection{Teleportación cuántica (1993)}
+
+Transferir un estado cuántico de un sistema local (Ej. remoto) a través
+del entrelazamiento. Entonces es una nueva forma de comunicación. 
+
+Parte de un circuito como el de la clase pasada haces evolucionar
+el estado producto y sale un entrelazado como $\KET{\psi_{AB}}$ entonces
+esos dos qubits que en su momento no interactuaron cuánticamente salen
+entrelazados pero uno fue a un lugar y el otro a otro (los dos caminos
+de abajo). Esto se puede usar para transmitir un estado? Propongo
+un 3er estado $\KET{\varphi_{C}}=\alpha\KET 0+\beta\KET 1$.
+
+El sistema parte de un estado (\textbf{etapa }I)
+\[
+\KET{\psi_{CAB}}=\PARENTESIS{\alpha\KET 0+\beta\KET 1}\PARENTESIS{\underset{AB}{\KET{00}}+\KET{11}}/\sqrt{2}
+\]
+
+Hacer alguna operación en el planeta A (involucra 2 canales cuánticos,
+los dos de arriba) y que el estado $\KET{\psi_{C}}$ aparezca en el
+planeta B. La idea es aplicar una medida de Bell (transforma estados
+de Bell en estados productos). El entrelazamiento no es espacial si
+están a largas distancias mientras el estado no interactuó con otra
+cosa no se pierde.
+
+\begin{quantikz}[slice all] \lstick[wires=2]{$\text{Planeta A}$} & \lstick{$\ket{\varphi_c}=\alpha\ket{0}+\beta\ket{1}$}& \ctrl{1} & \gate{H} & & \ctrl{2}&\qw\\ \qw&\qw&\octrl{-1}&\qw&\ctrl{1}&\qw&\qw\\ \lstick[wires=1]{$\text{Planeta B }\ket{\psi_{AB}}=\frac{\ket{00}+\ket{11}}{\sqrt{2}}$}&\qw&\qw&\qw&\gate{\sigma_x}&\gate{\sigma_x}&\rstick{$\ket{\varphi_c}$} 
+\end{quantikz}
+\begin{center}
+\par\end{center}
+
+\textbf{Etapa intermedia II }
+
+Entre el Control-NOT y el Hadamard
+
+\[
+\frac{\alpha}{\sqrt{2}}\KET 0\PARENTESIS{\KET{00}+\KET{11}}+\frac{\beta}{\sqrt{2}}\KET 0\PARENTESIS{\KET{10}+\KET{01}}
+\]
+
+\textbf{Etapa III}
+
+Después del Hadamard $H\KET 0=\frac{\KET 0+\KET 1}{\sqrt{2}}$ y $H\KET 1=\frac{\KET 0-\KET 1}{\sqrt{2}}$.
+Entonces el estado evoluciona a 
+
+\[
+\frac{\alpha}{\sqrt{2}}\frac{\KET 0+\KET 1}{\sqrt{2}}\PARENTESIS{\KET{00}+\KET{11}}+\frac{\beta}{\sqrt{2}}\frac{\KET 0-\KET 1}{\sqrt{2}}\PARENTESIS{\KET{10}+\KET{01}}
+\]
+
+(todo esto hecho localmente en A)
+
+Si juntamos todo 
+
+\[
+=\frac{1}{2}\CORCHETES{\underset{AC}{\KET{00}}\LLAVEABAJO{\PARENTESIS{\alpha\underset{B}{\KET 0}+\beta\underset{B}{\KET 1}}}{\KET{\varphi}}+\KET{01}\LLAVEABAJO{\PARENTESIS{\alpha\KET 1+\beta\KET 0}}{\sigma_{x}\KET{\varphi}}+\KET{10}\LLAVEABAJO{\PARENTESIS{\alpha\KET 0-\beta\KET 1}}{\sigma_{z}\KET{\varphi}}+\KET{11}\LLAVEABAJO{\PARENTESIS{\alpha\KET 1-\beta\KET 0}}{\sigma_{x}\sigma_{z}\KET{\varphi}}}
+\]
+
+Entonces si uno después de esto mide en A $\KET{00}$en B aparece
+el $\KET 0$.
+
+Lo que vemos es que como consecuencia el estado c o bien paso al otro
+lado tal cual o bien paso al otro lado transformado con algún $\sigma_{\nu}$.
+Entonces para hacer que el estado original aparezca en el otro planeta
+hay 2 opciones:
+
+- Si están cerca y sólo quiero transferir de un cable al otro es hacer
+un control si esta $\KET{00}$ no hago nada o si hay $\KET{01}$ hago
+$\sigma_{x}$, así sucesivamente (usando que $\sigma_{\nu}^{2}=I$->
+anulo la transformación) y así tendría en B en el estado $\KET{\varphi}$.
+
+Si pongo un Control-X $\sigma_{x}$ y un control z, Si está en 1 le
+aplica $\sigma_{x}$ ahora en el otro si esta $\KET 1$ aplica $\sigma_{z}$
+ahora bien si está en los dos entonces actual los dos. Entonces con
+este esquema en la etapa cuatro obtengo en el último canal $\KET{\varphi_{c}}$.
+Puedo decir que el entrelazamiento entre A y B se terminó porque se
+usó para transferir el estado $\KET{\varphi_{B}}=\alpha\KET 0+\beta\KET 1$. 
+
+Una forma efectiva es modificar el circuito haciendo una medida $\CheckedBox$,
+luego esta $\sigma_{x}^{i}$ siendo $i=0,1$ entonces aplica o no
+aplica, esto significa una comunicación clásica (la raya curvadita),
+llamo y le digo tenés que aplicar la medida. Hago lo mismo con $\sigma_{z}$.
+\begin{center}
+\includegraphics[scale=0.7]{\string"fig2 clase4-9\string".png}
+\par\end{center}
+
+Se usa cristal birrefringente uno de los fotones queda en la tierra
+el otro se manda al satélite se hacen las cosas y se prueba esto.
+
+Esto muestra que el entrelazamiento nos permite una nueva forma de
+comunicación.
+
+Si hago traza parcial en el canal B antes de los sigmas, 
+\[
+\rho_{B}=Tr_{AC}\PROYECT{\psi_{CAB}}{\psi_{CAB}}=\frac{\PROYECT 00+\PROYECT 11}{0}
+\]
+
+Luego voy a obtener el estado puro $\KET{\varphi}$.
+
+Si hubiera un estado D entrelazado con C, luego de aplicar todo esto
+terminaría teniendo el estado D entrelazado con B.
+
+\subsection{Codificación Superdensa}
+
+¿Qué información puede transmitirse con un qubit? La idea es enviar
+un qubit. 
+
+Dada una fuente que emite un par de fotones o qubits entrelazados
+\[
+\KET{\psi_{AB}}=\frac{\KET{00}+\KET{11}}{\sqrt{2}}
+\]
+
+En A hacemos una operación U sobre ese qubit. Luego vuelve y hacemos
+una medida conjunta en estos dos cables cuánticos.
+\begin{center}
+\includegraphics[scale=0.5]{\string"fig3 clase4-9\string".png}
+\par\end{center}
+
+Si por ej A aplica la I entonces el estado queda igual. 
+
+Si A aplica $\sigma_{x}$, entonces $\KET{\psi_{AB}}\rightarrow\frac{\KET{10}+\KET{01}}{\sqrt{2}}$
+
+Si A aplica $\sigma_{z}$, entonces $\KET{\psi_{AB}}\rightarrow\frac{\KET{00}-\KET{11}}{\sqrt{2}}$
+
+Si A aplica $\sigma_{y}=\sigma_{x}\sigma_{z}$, $\KET{\psi_{AB}}\rightarrow\frac{\KET{10}-\KET{01}}{\sqrt{2}}$
+
+Luego hago la medida conjunta y veo que llego a 4 estados ortogonales
+bien distinguidos, entonces si puedo medir estados Bell, pero si recibo
+el qubit que viene de A como esta entrelazado voy a poder ver la operación
+que hice y voy a obtener 2 bits de información 1 de la operación que
+hice y 1 del estado.
+
+Entonces vemos que el entrelazamiento lo podemos usar para transmitir
+información. 
+
+Para medir en base estándar mido la polarización directo o con un
+stern y gerlach. Ahora bien si quiero hacer medida en la base de Bell,
+lo que hago antes de medirlo en la base computacional le aplico alguna
+operación para pasarlo de la base de Bell a la computacional: primero
+control not y después la Hadamard 
+\begin{center}
+\includegraphics[scale=0.5]{\string"fig4 clase4-9\string".png}
+\par\end{center}
+
+Nosotros sabemos de álgebra que $(AB)^{-1}=B^{-1}A^{-1}$pero dado
+que la inversa del Control-NOT es sí mismo y de la Hadamard
+es sí misma también, por eso podemos invertir como indica la figura. 
+
+%%%%%%%%%%%%%%%%%%%%Hasta acá esta en algoritmos%%%%%%%%%%%%%%
+
+\section{Demostración de que el desorden global es mayor o igual que el desorden
+local en todo sistema descripto por variables aleatorias. (esto es
+clásico)}
+
+Tenemos un sistema (A,B) conjunto, entonces tiene una distribución
+de probabilidad conjunta
+\[
+P_{ij}=P(A=i,B=j)
+\]
+ 
+\[
+S(A,B)=-\sum_{i,j}P_{ij}\log P_{ij}\qquad\text{Medida del desorden global}
+\]
+
+\[
+S(A,B)=0\iff P_{ij}=\delta_{i}\delta_{j}
+\]
+
+\[
+S(A,B)\:max\iff P_{ij}=\frac{1}{\sqrt{n_{a}n_{b}}}
+\]
+
+Distribución marginal que es $P_{i}^{A}=\sum_{j}P_{ij}$
+
+Entropía de A: $S(A)=-\sum_{i}P_{i}^{A}\log P_{i}^{A}$
+
+Entropía condicional clásica de B dado A $S(B|A)=\sum_{i}P(A=i)\LLAVEABAJO{\sum_{j}P(B=j|A=i)\log P(B=j|A=i)}{S(B|A=i)}$
+
+$P(B=j|A=i)=\frac{P(B=j,A=i)}{P(A=i)}=\frac{P_{ij}}{P_{i}^{A}}$ la
+coma significa intersección. 
+
+\[
+S(B|A)=-\sum_{i}P_{i}^{A}\sum_{j}\frac{P_{ij}}{P_{i}^{A}}\log\frac{P_{ij}}{P_{i}^{A}}=-\sum_{ij}P_{ij}\PARENTESIS{\log\PARENTESIS{P_{ij}}-\log\PARENTESIS{P_{i}^{A}}}
+\]
+
+\[
+=S(A,B)-\PARENTESIS{-\sum_{i}P_{i}^{A}\log P_{i}^{A}}=S(A,B)-S(A)\geq0
+\]
+
+Que sea $\geq0$ implica que $S(A,B)\geq S(A)$. Entonces el desorden
+global es mayor o igual que el desorden local. $\blacksquare$
+
+Ahora bien en un estado de Bell 
+\[
+\KET{\psi_{AB}}=\frac{\KET{00}+\KET{11}}{\sqrt{2}}
+\]
+ 
+\[
+\rho_{AB}=\PROYECT{\psi_{AB}}{\psi_{AB}}\qquad\rho_{A}=\frac{\PROYECT 00+\PROYECT 11}{\sqrt{2}}
+\]
+Ahora ya no tenemos sumas parciales tenemos trazas parciales.
+\[
+S(A,B)=S(\text{\ensuremath{\rho_{AB}}})=0
+\]
+
+Pero ahora $S(\rho_{A})=1=S(A)$ entonces cuánticamente no se cumple
+esto.
+
+La entropía condicional cuántica ya no es positiva. 
+
+Para el caso de operadores densidad diagonales:
+
+\[
+\rho_{AB}=\sum_{ij}\PROYECT{ij}{ij}p_{ij}
+\]
+en una base producto (con $p_{ij}>0$), la entropía conjunta se comporta
+como una clásica. Tengo un <<mundo clásico>>.
+
+\section{Computación Cuántica}
+
+Idea fundamental (Feymann):
+
+\textbf{Paralelismo cuántico} en un paso puede hacer 2 operaciones
+o si más 
+\begin{center}
+\includegraphics[scale=0.7]{\string"fig5 clase4-9\string".png}
+\par\end{center}
+
+Superponer los dos estados es natural es cambiar la dirección del
+estado. 
+
+\subsection{El primer algoritmo (histórico) Deutsch 1986.}
+
+El problema más simple posible donde la mecánica cuántica pueda hacer
+algo que lo clásico no, entonces dada una función $f:\LLAVES{0,1}\rightarrow\LLAVES{0,1}$
+y la pregunta que me hago: $f(0)=f(1)$ o $f(0)\neq f(1)$ que clásicamente
+necesita dos evaluaciones de la función pero cuánticamente lo podemos
+hacer en una sola evaluación.
+
+Planteo un sistema de dos qubits pero pongo un bloque grande que implica
+una operación no sobre un sólo qubit sino una operación que involucra
+ambos qubits. Es decir hacerlo con una sóla entrada
+
+Sabemos que $f(0)=0\:o\:1$ al igual que $f(1)$. $U_{f}\KET{ij}=\KET{i,j\oplus f(i)}$
+con $\oplus$ suma en módulo 2. Podemos ver que $U_{f}$ es unitaria. 
+\begin{center}
+\includegraphics[scale=0.75]{\string"fig6 clase4-9\string".png}
+\par\end{center}
+
+Entonces qué pasa 
+\[
+\KET 0\PARENTESIS{\frac{\KET 0-\KET 1}{\sqrt{2}}}=\frac{\KET{00}-\KET{01}}{\sqrt{2}}\underset{U_{f}}{\rightarrow}\frac{U_{f}\KET{00}-U_{f}\KET{01}}{\sqrt{2}}
+\]
+
+\[
+=\KET{0,f(0)}-\KET{0,1\oplus f(0)}=\KET 0\PARENTESIS{\KET{f(0)}-\KET{1\oplus f(0)}}=(-1)^{f(0)}\KET 0\frac{\KET 0-\KET 1}{\sqrt{2}}
+\]
+
+Si $f(0)$ es 0 queda el estado original
+
+Si $f(0)=1$ queda - el estado original
+
+Ahora bien el resultado que uno obtiene de esta suma
+
+\[
+\frac{1}{2}\PARENTESIS{\KET 0(-1)^{f(0)}+\KET 1(-1)^{f(1)}}\PARENTESIS{\KET 0-\KET 1}
+\]
+entonces uno obtiene el valor de $f$ como una fase. 
+
+\[
+\frac{1}{2}(-1)^{f(0)}\PARENTESIS{\KET 0+\KET 1(-1)^{f(1)-f(0)}}\PARENTESIS{\KET 0-\KET 1}
+\]
+Ahí vimos que se puede hacer en un sólo paso. La fase que tenemos
+sobre todo el estado no nos importa, ahora bien si $f(0)=f(1)$ entonces
+me devuelve el estado original, ahora si $f(0)\neq f(1)$ me da el
+estado ortogonal. Mido en la base de x entonces si me da 1 son iguales
+si me da -1 son distintas. Vuelvo a ponerlo en la base computacional
+con una Hadamard, y obtengo
+\begin{center}
+\includegraphics[scale=0.7]{\string"fig7 clase4-9\string".png}
+\par\end{center}

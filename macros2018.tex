@@ -1,0 +1,154 @@
+%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+% \documentclass[spanish]{article}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin9]{luainputenc}
+% \usepackage{geometry}
+% \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm}
+% \usepackage{float}
+% \usepackage{xargs}[2008/03/08]
+% \usepackage{babel}
+% \addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+% \begin{document}
+% \ifdefined\MacrosDosMilDieciocho
+% \else
+% \newcommand*{\MacrosDosMilDieciocho}{}
+
+\global\long\def\INDICADORA#1{\mathbf{1}\left\{  #1\right\}  }%
+
+\global\long\def\MODULO#1{\left|\,#1\,\right|}%
+
+\global\long\def\PARENTESIS#1{\left(#1\right)}%
+
+\global\long\def\CORCHETES#1{\left[#1\right]}%
+
+\global\long\def\LLAVES#1{\left\{  #1\right\}  }%
+
+\global\long\def\LKEY#1{\left\{  #1\right.}%
+
+\global\long\def\RKEY#1{\left.#1\right\}  }%
+
+\global\long\def\LCORCHETE#1{\left[#1\right.}%
+
+\global\long\def\RCORCHETE#1{\left.#1\right]}%
+
+\global\long\def\ANGULITOS#1{\left\langle #1\right\rangle }%
+
+\global\long\def\ESPACIOLARGO{\hspace{10mm}}%
+
+\global\long\def\ESPACIOMEDIO{\hspace{5mm}}%
+
+\global\long\def\DEF{\overset{{\scriptscriptstyle \text{def}}}{=}}%
+
+\global\long\def\LLAVEARRIBA#1#2{\overset{{\scriptstyle #2}}{\overbrace{#1}}}%
+
+\global\long\def\LLAVEABAJO#1#2{\underset{{\scriptstyle #2}}{\underbrace{#1}}}%
+
+\global\long\def\REALES{\mathbb{R}}%
+
+\global\long\def\IMAGINARIOS{\mathbb{I}}%
+
+\global\long\def\NATURALES{\mathbb{N}}%
+
+\global\long\def\ENTEROS{\mathbb{Z}}%
+
+\global\long\def\COMPLEJOS{\mathbb{C}}%
+
+\global\long\def\RACIONALES{\mathbb{Q}}%
+
+\global\long\def\DIFERENCIAL{\,d}%
+
+\global\long\def\DIRACDELTA#1{\delta_{D}\PARENTESIS{#1}}%
+
+\newcommandx\KRONEDELTA[1][usedefault, addprefix=\global, 1=ij]{\delta_{#1}}%
+ 
+
+\global\long\def\HEAVYSIDETHETA#1{\Theta_{H}\PARENTESIS{#1}}%
+
+\global\long\def\SINC{\text{sinc }}%
+
+\global\long\def\ATAN{\text{atan}}%
+
+\global\long\def\CURL{\nabla\times}%
+
+\global\long\def\GRADIENT{\nabla}%
+
+\global\long\def\DIVERGENCE{\nabla\cdot}%
+ 
+
+\global\long\def\LAPLACIAN{\nabla^{2}}%
+
+\global\long\def\REALPART#1{\text{Re}\left(#1\right)}%
+
+\global\long\def\IMAGPART#1{\text{Im}\left(#1\right)}%
+
+\global\long\def\TIENDEA#1{\underset{{\scriptscriptstyle #1}}{\longrightarrow}}%
+
+\global\long\def\EVALUADOEN#1#2#3{\left.#1\right\rfloor _{#2}^{#3}}%
+
+\global\long\def\VECTOR#1{\boldsymbol{#1}}%
+
+\global\long\def\VERSOR#1{\hat{\VECTOR{#1}}}%
+
+\global\long\def\TERA#1{\text{ T}\unit{#1}}%
+ 
+
+\global\long\def\GIGA#1{\text{ G}\unit{#1}}%
+
+\global\long\def\MEGA#1{\text{ M}\unit{#1}}%
+
+\global\long\def\KILO#1{\text{ k}\unit{#1}}%
+
+\global\long\def\UNIT#1{\,\unit{#1}}%
+
+\global\long\def\CENTI#1{\text{ c}\unit{#1}}%
+
+\global\long\def\MILI#1{\text{ m}\unit{#1}}%
+
+\global\long\def\MICRO#1{\text{ }\mu\unit{#1}}%
+
+\global\long\def\NANO#1{\text{ n}\unit{#1}}%
+
+\global\long\def\PICO#1{\text{ p}\unit{#1}}%
+
+\global\long\def\FEMTO#1{\text{ f}\unit{#1}}%
+
+\global\long\def\PORDIEZALA#1{\times10^{#1}}%
+
+\global\long\def\PROBABILIDAD#1{\mathbb{P}\left(#1\right)}%
+
+\global\long\def\COLOR#1#2{{\color{#2}{\,#1\,}}}%
+
+\global\long\def\RED#1{\textcolor{red}{#1}}%
+
+\global\long\def\BLUE#1{\COLOR{#1}{blue!80!white}}%
+
+\global\long\def\GREEN#1{\textcolor{green!70!black}{#1}}%
+
+\global\long\def\GRAY#1{\COLOR{#1}{black!30}}%
+
+\global\long\def\GRAY#1{\COLOR{#1}{blue!25!white}}%
+
+\global\long\def\GUNDERBRACE#1#2{\GRAY{\LLAVEABAJO{\COLOR{#1}{black}}{#2}}}%
+
+\global\long\def\RUNDERBRACE#1#2{\RED{\LLAVEABAJO{\COLOR{#1}{black}}{#2}}}%
+
+\global\long\def\BUNDERBRACE#1#2{\BLUE{\LLAVEABAJO{\COLOR{#1}{black}}{#2}}}%
+
+\global\long\def\GUPBRACE#1#2{\GRAY{\LLAVEARRIBA{\COLOR{#1}{black}}{#2}}}%
+
+\global\long\def\RUPBRACE#1#2{\RED{\LLAVEARRIBA{\COLOR{#1}{black}}{#2}}}%
+
+\global\long\def\BUPBRACE#1#2{\BLUE{\LLAVEARRIBA{\COLOR{#1}{black}}{#2}}}%
+ 
+
+\global\long\def\REDCANCEL#1{\RED{\cancel{{\normalcolor #1}}}}%
+
+\global\long\def\BLUECANCEL#1{{\color{blue}\cancel{{\normalcolor #1}}}}%
+ 
+
+\global\long\def\BLUECANCELTO#1#2{\BLUE{\cancelto{#2}{{\normalcolor #1}}}}%
+
+% \fi % end if
+% \end{document}

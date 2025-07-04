@@ -1,0 +1,1572 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{ZZ.14S}{set}{}
+    \set{ZZ.14,ZZ.14b,ZZ.14c}
+  \endentry
+
+  \entry{blx@fakeset-ZZ.14S}{set}{}
+    \name{author}{4}{}{%
+      {{hash=RT}{%
+         family={Ramos},
+         familyi={R\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PH}{%
+         family={Pichler},
+         familyi={P\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Daley},
+         familyi={D\bibinitperiod},
+         given={A.J.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zoller},
+         familyi={Z\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \fakeset{ZZ.14S}
+    \set{ZZ.14,ZZ.14b,ZZ.14c}
+    \strng{crossref}{ZZ.14}
+    \strng{namehash}{RTPHDAZP1}
+    \strng{fullhash}{RTPHDAZP1}
+    \field{labelnamesource}{author}
+    \field{pages}{237203}
+    \field{volume}{113}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2014}
+  \endentry
+
+  \entry{ZZ.14}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RT}{%
+         family={Ramos},
+         familyi={R\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PH}{%
+         family={Pichler},
+         familyi={P\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Daley},
+         familyi={D\bibinitperiod},
+         given={A.J.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zoller},
+         familyi={Z\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RTPHDAZP1}
+    \strng{fullhash}{RTPHDAZP1}
+    \field{labelnamesource}{author}
+    \field{pages}{237203}
+    \field{volume}{113}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2014}
+  \endentry
+
+  \entry{ZZ.14b}{article}{}
+    \name{author}{6}{}{%
+      {{hash=GA}{%
+         family={Glaetzle},
+         familyi={G\bibinitperiod},
+         given={A.W.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DM}{%
+         family={Damonte},
+         familyi={D\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=NR}{%
+         family={Nath},
+         familyi={N\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gross},
+         familyi={G\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BI}{%
+         family={Bloch},
+         familyi={B\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zoller},
+         familyi={Z\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GADMNRGCBIZP1}
+    \strng{fullhash}{GADMNRGCBIZP1}
+    \field{labelnamesource}{author}
+    \field{pages}{173002}
+    \field{volume}{114}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2015}
+  \endentry
+
+  \entry{ZZ.14c}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BI}{%
+         family={Bloch},
+         familyi={B\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Dalibard},
+         familyi={D\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zwerger},
+         familyi={Z\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BIDJZW1}
+    \strng{fullhash}{BIDJZW1}
+    \field{labelnamesource}{author}
+    \field{pages}{885}
+    \field{volume}{80}
+    \field{journaltitle}{Rev. Mod. Phys.}
+    \field{year}{2006}
+  \endentry
+
+  \entry{Pr.75S}{set}{}
+    \set{Pr.75,Pr.75b}
+  \endentry
+
+  \entry{blx@fakeset-Pr.75S}{set}{}
+    \name{author}{4}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zuilhof},
+         familyi={Z\bibinitperiod},
+         given={M.J.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Siskens},
+         familyi={S\bibinitperiod},
+         given={Th.J.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \fakeset{Pr.75S}
+    \set{Pr.75,Pr.75b}
+    \strng{crossref}{Pr.75}
+    \strng{namehash}{PJCHZMST1}
+    \strng{fullhash}{PJCHZMST1}
+    \field{labelnamesource}{author}
+    \field{pages}{319}
+    \field{volume}{81}
+    \field{journaltitle}{Phys. A}
+    \field{year}{1975}
+  \endentry
+
+  \entry{Pr.75}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zuilhof},
+         familyi={Z\bibinitperiod},
+         given={M.J.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Siskens},
+         familyi={S\bibinitperiod},
+         given={Th.J.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJCHZMST1}
+    \strng{fullhash}{PJCHZMST1}
+    \field{labelnamesource}{author}
+    \field{pages}{319}
+    \field{volume}{81}
+    \field{journaltitle}{Phys. A}
+    \field{year}{1975}
+  \endentry
+
+  \entry{Pr.75b}{article}{}
+    \name{author}{3}{}{%
+      {{hash=ST}{%
+         family={Siskens},
+         familyi={S\bibinitperiod},
+         given={Th.J.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{STCHPJ1}
+    \strng{fullhash}{STCHPJ1}
+    \field{labelnamesource}{author}
+    \field{pages}{21}
+    \field{volume}{53}
+    \field{journaltitle}{Phys. Lett. A}
+    \field{year}{1975}
+  \endentry
+
+  \entry{Pr.77S}{set}{}
+    \set{Pr.77,Pr.78,Pr.09,Pr.78,Pr.09}
+  \endentry
+
+  \entry{blx@fakeset-Pr.77S}{set}{}
+    \name{author}{3}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Siskens},
+         familyi={S\bibinitperiod},
+         given={Th.J.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \fakeset{Pr.77S}
+    \set{Pr.77,Pr.78,Pr.09,Pr.78,Pr.09}
+    \strng{crossref}{Pr.77}
+    \strng{namehash}{PJCHST1}
+    \strng{fullhash}{PJCHST1}
+    \field{labelnamesource}{author}
+    \field{pages}{304}
+    \field{volume}{89}
+    \field{journaltitle}{Phys. A}
+    \field{year}{1977}
+  \endentry
+
+  \entry{Pr.77}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Siskens},
+         familyi={S\bibinitperiod},
+         given={Th.J.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJCHST1}
+    \strng{fullhash}{PJCHST1}
+    \field{labelnamesource}{author}
+    \field{pages}{304}
+    \field{volume}{89}
+    \field{journaltitle}{Phys. A}
+    \field{year}{1977}
+  \endentry
+
+  \entry{Pr.78}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Capel},
+         familyi={C\bibinitperiod},
+         given={H.W.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJCH1}
+    \strng{fullhash}{PJCH1}
+    \field{labelnamesource}{author}
+    \field{pages}{163}
+    \field{volume}{92}
+    \field{journaltitle}{Phys. A}
+    \field{year}{1978}
+  \endentry
+
+  \entry{Pr.09}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PJ}{%
+         family={Perk},
+         familyi={P\bibinitperiod},
+         given={J.H.H.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AYH}{%
+         family={Au-Yang},
+         familyi={A\bibinithyphendelim Y\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJAYH1}
+    \strng{fullhash}{PJAYH1}
+    \field{labelnamesource}{author}
+    \field{pages}{599}
+    \field{volume}{135}
+    \field{journaltitle}{J. Stat. Phys.}
+    \field{year}{2009}
+  \endentry
+
+  \entry{FM.07S}{set}{}
+    \set{FM.07,FM.07b,FM.07c}
+  \endentry
+
+  \entry{blx@fakeset-FM.07S}{set}{}
+    \name{author}{2}{}{%
+      {{hash=KE}{%
+         family={Kutznetsova},
+         familyi={K\bibinitperiod},
+         given={E.I.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=FE}{%
+         family={Fel'dman},
+         familyi={F\bibinitperiod},
+         given={E.B.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \fakeset{FM.07S}
+    \set{FM.07,FM.07b,FM.07c}
+    \strng{crossref}{FM.07}
+    \strng{namehash}{KEFE1}
+    \strng{fullhash}{KEFE1}
+    \field{labelnamesource}{author}
+    \field{pages}{882}
+    \field{volume}{102}
+    \field{journaltitle}{JETP. Lett.}
+    \field{year}{2006}
+  \endentry
+
+  \entry{FM.07}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KE}{%
+         family={Kutznetsova},
+         familyi={K\bibinitperiod},
+         given={E.I.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=FE}{%
+         family={Fel'dman},
+         familyi={F\bibinitperiod},
+         given={E.B.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KEFE1}
+    \strng{fullhash}{KEFE1}
+    \field{labelnamesource}{author}
+    \field{pages}{882}
+    \field{volume}{102}
+    \field{journaltitle}{JETP. Lett.}
+    \field{year}{2006}
+  \endentry
+
+  \entry{FM.07b}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FE}{%
+         family={Fel'dman},
+         familyi={F\bibinitperiod},
+         given={E.B.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rudavets},
+         familyi={R\bibinitperiod},
+         given={M.G.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FERM1}
+    \strng{fullhash}{FERM1}
+    \field{labelnamesource}{author}
+    \field{pages}{47}
+    \field{volume}{81}
+    \field{journaltitle}{JETP. Lett.}
+    \field{year}{2005}
+  \endentry
+
+  \entry{FM.07c}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DS}{%
+         family={Doronin},
+         familyi={D\bibinitperiod},
+         given={S.I.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pyrkov},
+         familyi={P\bibinitperiod},
+         given={A.N.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FE}{%
+         family={Fel'dman},
+         familyi={F\bibinitperiod},
+         given={E.B.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DSPAFE1}
+    \strng{fullhash}{DSPAFE1}
+    \field{labelnamesource}{author}
+    \field{pages}{519}
+    \field{volume}{85}
+    \field{journaltitle}{JETP. Lett.}
+    \field{year}{2007}
+  \endentry
+
+  \entry{MG.69S}{set}{}
+    \set{MG.69,MG.69b,MG.69c}
+  \endentry
+
+  \entry{blx@fakeset-MG.69S}{set}{}
+    \name{author}{2}{}{%
+      {{hash=MC}{%
+         family={Majundar},
+         familyi={M\bibinitperiod},
+         given={C.K.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gosh},
+         familyi={G\bibinitperiod},
+         given={D.K.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \fakeset{MG.69S}
+    \set{MG.69,MG.69b,MG.69c}
+    \strng{crossref}{MG.69}
+    \strng{namehash}{MCGD1}
+    \strng{fullhash}{MCGD1}
+    \field{labelnamesource}{author}
+    \field{pages}{1388}
+    \field{volume}{10}
+    \field{journaltitle}{J. Math. Phys.}
+    \field{year}{1969}
+  \endentry
+
+  \entry{MG.69}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MC}{%
+         family={Majundar},
+         familyi={M\bibinitperiod},
+         given={C.K.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gosh},
+         familyi={G\bibinitperiod},
+         given={D.K.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MCGD1}
+    \strng{fullhash}{MCGD1}
+    \field{labelnamesource}{author}
+    \field{pages}{1388}
+    \field{volume}{10}
+    \field{journaltitle}{J. Math. Phys.}
+    \field{year}{1969}
+  \endentry
+
+  \entry{MG.69b}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MC}{%
+         family={Majundar},
+         familyi={M\bibinitperiod},
+         given={C.K.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gosh},
+         familyi={G\bibinitperiod},
+         given={D.K.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MCGD1}
+    \strng{fullhash}{MCGD1}
+    \field{labelnamesource}{author}
+    \field{pages}{1399}
+    \field{volume}{10}
+    \field{journaltitle}{J. Math. Phys.}
+    \field{year}{1969}
+  \endentry
+
+  \entry{MG.69c}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SB}{%
+         family={Shastry},
+         familyi={S\bibinitperiod},
+         given={B.S.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Sutherland},
+         familyi={S\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SBSB1}
+    \strng{fullhash}{SBSB1}
+    \field{labelnamesource}{author}
+    \field{pages}{964}
+    \field{volume}{47}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1981}
+  \endentry
+
+  \entry{HH.11S}{set}{}
+    \set{HH.11,HH.11b}
+  \endentry
+
+  \entry{blx@fakeset-HH.11S}{set}{}
+    \name{author}{4}{}{%
+      {{hash=SJ}{%
+         family={Sirker},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Herzog},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Oles},
+         familyi={O\bibinitperiod},
+         given={A.M.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Horsch},
+         familyi={H\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \fakeset{HH.11S}
+    \set{HH.11,HH.11b}
+    \strng{crossref}{HH.11}
+    \strng{namehash}{SJHAOAHP1}
+    \strng{fullhash}{SJHAOAHP1}
+    \field{labelnamesource}{author}
+    \field{pages}{157204}
+    \field{volume}{101}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2008}
+  \endentry
+
+  \entry{HH.11}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SJ}{%
+         family={Sirker},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Herzog},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Oles},
+         familyi={O\bibinitperiod},
+         given={A.M.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Horsch},
+         familyi={H\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJHAOAHP1}
+    \strng{fullhash}{SJHAOAHP1}
+    \field{labelnamesource}{author}
+    \field{pages}{157204}
+    \field{volume}{101}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2008}
+  \endentry
+
+  \entry{HH.11b}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HA}{%
+         family={Herzog},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Horsch},
+         familyi={H\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Oles},
+         familyi={O\bibinitperiod},
+         given={A.M.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sirker},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAHPOASJ1}
+    \strng{fullhash}{HAHPOASJ1}
+    \field{labelnamesource}{author}
+    \field{pages}{134428}
+    \field{volume}{84}
+    \field{journaltitle}{Phys. Rev. B}
+    \field{year}{2011}
+  \endentry
+
+  \entry{LM.15S}{set}{}
+    \set{LM.15,LM.15b}
+  \endentry
+
+  \entry{blx@fakeset-LM.15S}{set}{}
+    \name{author}{2}{}{%
+      {{hash=LC}{%
+         family={Lamas},
+         familyi={L\bibinitperiod},
+         given={C.A.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Matera},
+         familyi={M\bibinitperiod},
+         given={J.M.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \fakeset{LM.15S}
+    \set{LM.15,LM.15b}
+    \strng{crossref}{LM.15}
+    \strng{namehash}{LCMJ1}
+    \strng{fullhash}{LCMJ1}
+    \field{labelnamesource}{author}
+    \field{pages}{115111}
+    \field{volume}{92}
+    \field{journaltitle}{Phys. Rev. B}
+    \field{year}{2015}
+  \endentry
+
+  \entry{LM.15}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LC}{%
+         family={Lamas},
+         familyi={L\bibinitperiod},
+         given={C.A.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Matera},
+         familyi={M\bibinitperiod},
+         given={J.M.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LCMJ1}
+    \strng{fullhash}{LCMJ1}
+    \field{labelnamesource}{author}
+    \field{pages}{115111}
+    \field{volume}{92}
+    \field{journaltitle}{Phys. Rev. B}
+    \field{year}{2015}
+  \endentry
+
+  \entry{LM.15b}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MJ}{%
+         family={Matera},
+         familyi={M\bibinitperiod},
+         given={J.M.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Lamas},
+         familyi={L\bibinitperiod},
+         given={C.A.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJLC1}
+    \strng{fullhash}{MJLC1}
+    \field{labelnamesource}{author}
+    \field{pages}{326004}
+    \field{volume}{26}
+    \field{journaltitle}{J. Phys.: Condens. Matter}
+    \field{year}{2014}
+  \endentry
+
+  \entry{DEU.85}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DD}{%
+         family={Deutsch},
+         familyi={D\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DD1}
+    \strng{fullhash}{DD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{97}
+    \field{title}{Quantum theory, the {C}hurch-{T}uring Principle and the
+  universal quantum computer}
+    \field{volume}{400}
+    \field{journaltitle}{Proc. R. Soc. Lond. A}
+    \field{year}{1985}
+  \endentry
+
+  \entry{Sh.94}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SP}{%
+         family={Shor},
+         familyi={S\bibinitperiod},
+         given={P.W.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SP1}
+    \strng{fullhash}{SP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{29}
+    \field{title}{Algorithms for Quantum Computation: Discrete Logarithms and
+  Factoring}
+    \field{volume}{35}
+    \field{journaltitle}{Proc.\ Ann.\ Symp.\ Found.\ Comp.\ Science, IEEE
+  Press, Ca.}
+    \field{year}{1994}
+  \endentry
+
+  \entry{GR.97}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GL}{%
+         family={Grover},
+         familyi={G\bibinitperiod},
+         given={L.K.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GL1}
+    \strng{fullhash}{GL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{325}
+    \field{title}{Quantum Mechanichs Helps in Searching for a Needle in a
+  Haystack}
+    \field{volume}{79}
+    \field{journaltitle}{Phys.\ Rev.\ Lett.}
+    \field{year}{1997}
+  \endentry
+
+  \entry{NC.00}{book}{}
+    \name{author}{2}{}{%
+      {{hash=NMA}{%
+         family={Nielsen},
+         familyi={N\bibinitperiod},
+         given={Michael\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CIL}{%
+         family={Chuang},
+         familyi={C\bibinitperiod},
+         given={Isaac\bibnamedelima L.},
+         giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{NMACIL1}
+    \strng{fullhash}{NMACIL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Quantum Computation and Quantum Information}
+    \field{year}{2000}
+  \endentry
+
+  \entry{AA.11}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AS}{%
+         family={Aaronson},
+         familyi={A\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Arkhipov},
+         familyi={A\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ASAA1}
+    \strng{fullhash}{ASAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{333\bibrangedash 342}
+    \field{title}{A Universal Training Algorithm for Quantum Deep Learning}
+    \field{journaltitle}{Proceedings of the forty-third annual ACM symposium on
+  Theory of computing}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Be.93}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BCH}{%
+         family={Bennett},
+         familyi={B\bibinitperiod},
+         given={Charles\bibnamedelima H.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Brassard},
+         familyi={B\bibinitperiod},
+         given={Gilles},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Cr\'epeau},
+         familyi={C\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JR}{%
+         family={Jozsa},
+         familyi={J\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Peres},
+         familyi={P\bibinitperiod},
+         given={Asher},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WWK}{%
+         family={Wootters},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima K.},
+         giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BCHBGCCJRPAWWK1}
+    \strng{fullhash}{BCHBGCCJRPAWWK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.70.1895
+    \endverb
+    \field{number}{13}
+    \field{pages}{1895\bibrangedash 1899}
+    \field{title}{Teleporting an unknown quantum state via dual classical and
+  Einstein-Podolsky-Rosen channels}
+    \field{volume}{70}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1993}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Schr.35}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SE}{%
+         family={Schr\"odinger},
+         familyi={S\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SE1}
+    \strng{fullhash}{SE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{ibid, 32, 446 (1936)}
+    \field{pages}{555\bibrangedash 563}
+    \field{title}{Discussion of Probability Relations Between Separated
+  Systems}
+    \field{volume}{31}
+    \field{journaltitle}{Proc. Cambridge Philos. Soc.}
+    \field{year}{1935}
+  \endentry
+
+  \entry{V.07}{article}{}
+    \name{author}{1}{}{%
+      {{hash=VG}{%
+         family={Vidal},
+         familyi={V\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VG1}
+    \strng{fullhash}{VG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{99:220405}
+    \field{title}{Entanglement renormalization.}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Sch1}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SB}{%
+         family={Schumacher},
+         familyi={S\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{SB1}
+    \strng{fullhash}{SB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevA.51.2738
+    \endverb
+    \field{issue}{4}
+    \field{note}{C.H.\ Bennett, H. Bernstein, S. Popescu and B. Schumacher,
+  Phys.\ Rev.\ {\bf A 53} 2046 (1996)}
+    \field{pages}{2738\bibrangedash 2747}
+    \field{title}{Quantum coding}
+    \verb{url}
+    \verb http://link.aps.org/doi/10.1103/PhysRevA.51.2738
+    \endverb
+    \field{volume}{51}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{1995}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{BDSW.96}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BCH}{%
+         family={Bennett},
+         familyi={B\bibinitperiod},
+         given={Charles\bibnamedelima H.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=DDP}{%
+         family={DiVincenzo},
+         familyi={D\bibinitperiod},
+         given={David\bibnamedelima P.},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=SJA}{%
+         family={Smolin},
+         familyi={S\bibinitperiod},
+         given={John\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WWK}{%
+         family={Wootters},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima K.},
+         giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BCHDDPSJAWWK1}
+    \strng{fullhash}{BCHDDPSJAWWK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevA.54.3824
+    \endverb
+    \field{number}{5}
+    \field{pages}{3824\bibrangedash 3851}
+    \field{title}{Mixed-state entanglement and quantum error correction}
+    \field{volume}{54}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{1996}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Wh}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WA}{%
+         family={Wehrl},
+         familyi={W\bibinitperiod},
+         given={Alfred},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{WA1}
+    \strng{fullhash}{WA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/RevModPhys.50.221
+    \endverb
+    \field{issue}{2}
+    \field{pages}{221\bibrangedash 260}
+    \field{title}{General properties of entropy}
+    \verb{url}
+    \verb http://link.aps.org/doi/10.1103/RevModPhys.50.221
+    \endverb
+    \field{volume}{50}
+    \field{journaltitle}{Rev. Mod. Phys.}
+    \field{year}{1978}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{vn.27}{article}{}
+    \name{author}{1}{}{%
+      {{hash=vJ}{%
+         family={{von Neumann}},
+         familyi={v\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{vJ1}
+    \strng{fullhash}{vJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{245}
+    \field{title}{Wahrscheinlichkeitstheoretischer Aufbau der Quantenmechanik}
+    \field{journaltitle}{G\"ottinger Nachrichten}
+    \field{year}{1927}
+  \endentry
+
+  \entry{t.93}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BCH}{%
+         family={Bennett},
+         familyi={B\bibinitperiod},
+         given={Charles\bibnamedelima H.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Brassard},
+         familyi={B\bibinitperiod},
+         given={Gilles},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Cr\'epeau},
+         familyi={C\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JR}{%
+         family={Jozsa},
+         familyi={J\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Peres},
+         familyi={P\bibinitperiod},
+         given={Asher},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WWK}{%
+         family={Wootters},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima K.},
+         giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BCHBGCCJRPAWWK1}
+    \strng{fullhash}{BCHBGCCJRPAWWK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.70.1895
+    \endverb
+    \field{issue}{13}
+    \field{pages}{1895\bibrangedash 1899}
+    \field{title}{Teleporting an unknown quantum state via dual classical and
+  Einstein-Podolsky-Rosen channels}
+    \verb{url}
+    \verb http://link.aps.org/doi/10.1103/PhysRevLett.70.1895
+    \endverb
+    \field{volume}{70}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1993}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{W.89}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WRF}{%
+         family={Werner},
+         familyi={W\bibinitperiod},
+         given={Reinhard\bibnamedelima F.},
+         giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{WRF1}
+    \strng{fullhash}{WRF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevA.40.4277
+    \endverb
+    \field{number}{8}
+    \field{pages}{4277\bibrangedash 4281}
+    \field{title}{Quantum states with Einstein-Podolsky-Rosen correlations
+  admitting a hidden-variable model}
+    \field{volume}{40}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{1989}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{RS.07}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RR}{%
+         family={Rossignoli},
+         familyi={R\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SCT}{%
+         family={Schmiegelow},
+         familyi={S\bibinitperiod},
+         given={C.\bibnamedelima T.},
+         giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{RRSCT1}
+    \strng{fullhash}{RRSCT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevA.75.012320
+    \endverb
+    \field{number}{1}
+    \field{pages}{012320}
+    \field{title}{Entanglement generation resonances in {$XY$} chains}
+    \field{volume}{75}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{2007}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Gr.01}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GF}{%
+         family={Giraldi},
+         familyi={G\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=GP}{%
+         family={Grigolini},
+         familyi={G\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GFGP1}
+    \strng{fullhash}{GFGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{032310}
+    \field{title}{Quantum entanglement and entropy.}
+    \field{volume}{64}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{2001}
+  \endentry
+
+  \entry{P.96}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PA}{%
+         family={Peres},
+         familyi={P\bibinitperiod},
+         given={Asher},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{PA1}
+    \strng{fullhash}{PA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.77.1413
+    \endverb
+    \field{number}{8}
+    \field{pages}{1413\bibrangedash 1415}
+    \field{title}{Separability Criterion for Density Matrices}
+    \field{volume}{77}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1996}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Ho.96}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HM}{%
+         family={Horodecki},
+         familyi={H\bibinitperiod},
+         given={Michal},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Horodecki},
+         familyi={H\bibinitperiod},
+         given={Pawel},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Horodecki},
+         familyi={H\bibinitperiod},
+         given={Ryszard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HMHPHR1}
+    \strng{fullhash}{HMHPHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb http://dx.doi.org/10.1016/S0375-9601(96)00706-2
+    \endverb
+    \field{issn}{0375-9601}
+    \field{number}{1-2}
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{Separability of mixed states: necessary and sufficient
+  conditions}
+    \verb{url}
+    \verb http://www.sciencedirect.com/science/article/pii/S0375960196007062
+    \endverb
+    \field{volume}{223}
+    \field{journaltitle}{Physics Letters A}
+    \field{year}{1996}
+  \endentry
+
+  \entry{CR.02}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CN}{%
+         family={Canosa},
+         familyi={C\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Rossignoli},
+         familyi={R\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CNRR1}
+    \strng{fullhash}{CNRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{17}
+    \field{pages}{1704011\bibrangedash 1704014}
+    \field{title}{Generalized nonadditive entropies and quantum entanglement}
+    \field{volume}{88}
+    \field{journaltitle}{Physical Review Letters}
+    \field{year}{2002}
+  \endentry
+
+  \entry{RC.02}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RR}{%
+         family={Rossignoli},
+         familyi={R\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=CN}{%
+         family={Canosa},
+         familyi={C\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{RRCN1}
+    \strng{fullhash}{RRCN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevA.66.042306
+    \endverb
+    \field{number}{4}
+    \field{pages}{042306}
+    \field{title}{Generalized entropic criterion for separability}
+    \field{volume}{66}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{2002}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{NK.01}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NMA}{%
+         family={Nielsen},
+         familyi={N\bibinitperiod},
+         given={M.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kempe},
+         familyi={K\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{NMAKJ1}
+    \strng{fullhash}{NMAKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.86.5184
+    \endverb
+    \field{number}{22}
+    \field{pages}{5184\bibrangedash 5187}
+    \field{title}{Separable States Are More Disordered Globally than Locally}
+    \field{volume}{86}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2001}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{W.98}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HS}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WW}{%
+         family={Wootters},
+         familyi={W\bibinitperiod},
+         given={W.K.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HSWW1}
+    \strng{fullhash}{HSWW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{5022}
+    \field{title}{Entanglement of a pair of quantum bits}
+    \field{volume}{78}
+    \field{journaltitle}{Phys.\ Rev.\ Lett.}
+    \field{year}{1997}
+  \endentry
+
+  \entry{VW.02}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VG}{%
+         family={Vidal},
+         familyi={V\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Werner},
+         familyi={W\bibinitperiod},
+         given={R.F.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VGWR1}
+    \strng{fullhash}{VGWR1}
+    \field{labelnamesource}{author}
+    \field{pages}{032314}
+    \field{volume}{65}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{2002}
+  \endentry
+
+  \entry{ZHSL.99}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZK}{%
+         family={Zyczkowski},
+         familyi={Z\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Horodecki},
+         familyi={H\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sanpera},
+         familyi={S\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lewenstein},
+         familyi={L\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZKHPSALM1}
+    \strng{fullhash}{ZKHPSALM1}
+    \field{labelnamesource}{author}
+    \field{pages}{883}
+    \field{volume}{58}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{1998}
+  \endentry
+
+  \entry{ZHSL.99b}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ZK}{%
+         family={Zyczkowski},
+         familyi={Z\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZK1}
+    \strng{fullhash}{ZK1}
+    \field{labelnamesource}{author}
+    \field{pages}{3496}
+    \field{volume}{60}
+    \field{journaltitle}{Phys. Rev. A}
+    \field{year}{1999}
+  \endentry
+\enddatalist
+\endinput

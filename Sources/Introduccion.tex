@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  \begin{minipage}{0.5\textwidth}
+%    \begin{small}
+ %     ``...'' \par
+%\setlength{\parindent}{30ex}
+% \begin{flushright}{\it }
+% \end{flushright}
+%    \end{small}
+%    \end{minipage}
+%  \vspace{0.5cm}
+%\end{center}
+
+
+%\noindent This package contains a minimal, modern template for writing your
+%thesis. While originally meant to be used for a Ph.\,D.\ thesis, you can
+%equally well use it for your honour thesis, bachelor thesis, and so
+%on---some adjustments may be necessary, though.
+\section{Mecánica Cuántica}
+
+La mecánica cuántica es, en resumen, la teoría que describe el funcionamiento de todo el universo, pero que solo se manifiesta en forma directa en ciertos regímenes donde los efectos ``clásicos" son menos relevantes (es decir, a pequeñas longitudes, bajas temperaturas, bajas energías, altas presiones, etc.). Esta teoría presenta varias ideas poco intuitivas pero sin embargo, describe con perfecta precisión numerosos fenómenos que observamos experimentalmente a nivel microscópico. 
+
+En el último tiempo ha habido un crecimiento exponencial en el interés en la teoría de la información 
+cuántica y computación cuántica. Numerosas organizaciones gubernamentales y privadas (Google, IBM, Nasa, D-Wave, Microsoft, Russian Quantum Center, Chinese Academy of Sciences, European Flagship Initiative on Quantum Technology, etc.) han estado invirtiendo cifras exorbitantes impulsando la ``carrera'' 
+en búsqueda de la computadora cuántica. 
+
+Lo que a principios de los años ochenta 
+surgía como la idea ``peculiar'' de utilizar sistemas cuánticos para realizar una tarea
+en forma más eficiente que cualquier algoritmo clásico \cite{DEU.85}, 
+hoy claramente se ve como un
+incipiente cambio de paradigma tecnológico. 
+Entre los algoritmos más notables que surgieron inicialmente, se pueden mencionar
+el de factorización de Shor \cite{Sh.94}, que logra
+una reducción exponencial en el número de pasos requeridos, y el algoritmo cuántico de búsqueda
+de Grover \cite{GR.97}, que mostraron el potencial de una computación basada en la mecánica cuántica 
+(qubits en lugar de bits \cite{NC.00}). Puede mencionarse también el algoritmo de muestreo bosónico (boson sampling) de Arhikonov \cite{AA.11}, que también logra una reducción exponencial. El protocolo de teleportación cuántica \cite{Be.93} demostró que la 
+mecánica cuántica podía también utilizarse para generar nuevas formas de transmisión de información.
+Hoy en día son innumerables los desarrollos  que se hacen continuamente, tanto a nivel teórico, experimental 
+como incluso a través de la fabricación de dispositivos (como ejemplo de criptografía cuántica: en 2016 China lanzó el satélite QUESS: Quantum Experiments at Space Scale, capaz de recibir y transmitir claves encriptadas).
+
+Entre las características de los sistemas cuánticos que hacen posible estos avances sobresale el entrelazamiento cuántico, término establecido por Edwin Schrödinger en 1935 \cite{Schr.35} 
+para referirse a la capacidad de sistemas cuánticos compuestos de exhibir correlaciones entre sus componentes sin análogo clásico.
+
+La determinación exacta del entrelazamiento entre las distintas partes de un sistema compuesto en interacción, es un problema extraordinariamente difícil ya que requiere recursos que crecen exponencialmente con el 
+número de componentes.
+
+En estas notas del Curso Teoría de la Información Cuántica, cubriremos los contenidos básicos necesarios para comprender la teoría y los algoritmos de la computación cuántica. 
+
+\section{Notación de Dirac}
+Es importante señalar que el formalismo de la mecánica cuántica se basa en el del álgebra lineal, por este motivo es útil introducir algunos conceptos básicos. Tanto en Mecánica Cuántica como especialmente en Computación Cuántica se emplea la notación de ``bra-ket" \; introducida por Dirac.
+
+Es decir, introducimos dos definiciones: el ``bra''  y el ``ket''  que al calcular un producto interno (ver Sección \ref{inner_prod}), forman un  ``bra-ket"  (bracket es corchete en inglés). 
+
+Expresado en forma simple, el ket, escrito como $\ket{\psi}$, donde $\psi$ es una variable arbitraria usada para etiquetar al ket, representa un vector columna de longitud arbitraria. El bra, $\bra{\psi}$ representa su transpuesto conjugado. Para un ejemplo de 2 por 1, el ket $\ket{\psi}$ es tal que
+\begin{align}
+    \ket{\psi} = 
+    \begin{pmatrix}
+        \alpha \\
+        \beta \\
+    \end{pmatrix},\;\;\;
+    %\textrm{ y el bra }
+    \bra{\psi} = 
+    \begin{pmatrix}
+        \alpha^\ast & \beta^\ast
+    \end{pmatrix}. \nonumber
+\end{align}
+
+En general, $\ket{\psi}$ es un vector en un espacio vectorial complejo con producto interno, denominado espacio de Hilbert ${\cal H}$ (o espacio de estados),  mientras que $\bra{\psi}$ es un vector del espacio dual asociado ${\cal H}^*$, tal que $\langle \phi|\psi\rangle$ es el producto interno entre $|\phi\rangle$ y $|\psi\rangle$. En informaci\'on cu\'antica se suelen emplear espacios de  dimensi\'on finita $n$, tal que ${\cal H}=\mathbb{C}^n$, que corresponden a subespacios de un espacio de Hilbert de dimensi\'on infinita. 
+\vspace*{-.25cm}
+
+ %For a qubit, we'll define the ground and %excited states with $\ket{0}$ and $\ket{1}$, respectively, as
+% \begin{align}
+%     \ket{0} = 
+%     \begin{pmatrix}
+%         1 \\
+%         0 \\
+%     \end{pmatrix}
+%     \textrm{ and }
+%     \ket{1} = 
+%     \begin{pmatrix}
+%         0 \\
+%         1 \\
+%     \end{pmatrix} \nonumber
+% \end{align}
+% \noindent which are the real basis vectors of $\mathbb{C}^2$. The full quantum state of one qubit will then be a linear, complex superposition of these two basis vectors which are, by definition, normalized (magnitude one) and orthogonal (inner product zero). An arbitrary qubit state $\ket{\phi} = \alpha\ket{0} + \beta\ket{1}$ for $\alpha,\,\beta \in \mathbb{C}$. The state has corresponding bra $\bra{\phi} = \alpha^\ast\bra{0} + \beta^\ast\bra{1}$. We also impose the restriction $\left|\alpha\right|^2 + \left|\beta\right|^2 = 1$ to normalize the state for reasons to be discussed later in the course.
+%\section{Álgebra Lineal en Mecánica Cuántica}
+\section{Producto Interno} \label{inner_prod}
+Es necesario subrayar ciertos conceptos para aplicar álgebra lineal en mecánica cuántica. En primer lugar el concepto de producto interno usando notación de Dirac. 
+
+En realidad la notación de Dirac permite que el producto interno se calcule de forma sencilla. Por ejemplo, para calcular el producto de $\ket{\psi}$ con sí mismo, simplemente se multiplica por su transpuesto conjugado, que es justamente  $\bra{\psi}$. Por lo que queda: $\braket{\psi}{\psi}$. Para un estado normalizado $\braket{\psi}{\psi}=1$.  %$\sum^\textrm{n}_{i=1}\left|\alpha_i\right|^2=1$, su producto interno será también uno.
+
+Tomando $\ket{\psi}$ perteneciente a $\mathbb{C}^\textrm{n}$, se puede representar $\ket{\psi}$ como una superposición de los elementos de una  base ortonormal $\{|e_i\rangle\,,\;i=1,\ldots,n,\;\langle e_i|e_j\rangle=\delta_{ij}\}$ de  $\mathbb{C}^\textrm{n}$:
+\begin{align}
+    \ket{\psi} = \sum^\textrm{n}_{i=1}\alpha_i\ket{e_i} \nonumber
+\end{align}
+\noindent para $\alpha_i \in \mathbb{C}$, 
+con $\langle \psi|=\sum_{i=1}^n \alpha_i^*\bra{e_i}$. Para un estado normalizado, 
+%Ahora tomando el producto interno consigo mismo, tenemos
+\begin{align}
+    \braket{\psi}{\psi} &= \sum^\textrm{n}_{i,j=1}\alpha_j^\ast\alpha_i\braket{e_j}{e_i}%\nonumber\\
+    %&
+    = \sum^\textrm{n}_{i,j=1}\alpha_j^\ast\alpha_i\delta_{ij}%\nonumber\\
+    %&
+    = \sum^\textrm{n}_{i=1}\alpha_i^\ast\alpha_i%\nonumber\\
+    %&
+    = \sum^\textrm{n}_{i=1}\left|\alpha_i\right|^2 = 1\nonumber
+\end{align}
+
+El producto interno (``overlap'') entre  dos estados diferentes $\ket{\psi}$ y $\ket{\phi}=\sum_{i=1}^n \beta_i |e_i\rangle$ es 
+\[\braket{\phi}{\psi} = \sum^n_{i=1}\beta_i^\ast\alpha_i=\langle\psi|\phi\rangle^*\] 
+y es un concepto muy importante en mecánica cuántica. 
+Para estados normalizados su m\'odulo $|\langle\phi|\psi\rangle|$  está comprendido entre 0 y 1. 
+\vspace*{-3cm}
+
+% y se denomina ``overlap" entre los dos estados. 
+
+
+
+% \subsection{Operators} \label{operators}
+% Next, we consider quantum operators. Simply put, operators act on state vectors and are represented by matrices in the corresponding n-dimensional complex space. Some are defined in infinite dimensional space and must be truncated for finite dimensions. These operators become the classical analog of ``gates" in a quantum algorithm.
+
+% Quantum operators are represented as a variable (often capital) with a hat, eg. \textbf{\^{H}}, \textbf{\^{x}}, or \textbf{\^{a}}, and, in technical terms, are defined as mapping one vector space $V$ to another $W$. For a quantum operator \textbf{\^{A}}, $\textbf{\^{A}}: V \rightarrow W$. They have (but are not limited to) the following properties:
+
+% \begin{enumerate}
+%     \item linearity
+%         \begin{itemize}
+%             \item For quantum operator \textbf{\^{A}} in $V \in \mathbb{C}^\textrm{n}$, $\textbf{\^{A}}\sum^n_i \ket{e_i} = \sum^n_i \textbf{\^{A}}\ket{e_i}$.
+%         \end{itemize}
+%     \item composites
+%         \begin{itemize}
+%             \item For quantum operators \textbf{\^{A}}, \textbf{\^{B}} in $V \in \mathbb{C}^\textrm{n}$, $(\textbf{\^{A}\^{B}}) \ket{\psi} = \textbf{\^{A}(\^{B}} \ket{\psi})$
+%         \end{itemize}
+%     \item commutation
+%         \begin{itemize}
+%             \item ``Order matters"
+%             \item For quantum operators \textbf{\^{A}}, \textbf{\^{B}} in $V \in \mathbb{C}^\textrm{n}$, $\textbf{\^{A}\^{B}}\ket{\psi} \neq \textbf{\^{B}\^{A}} \ket{\psi}$
+%             \item In fact, we have the idea of the commutator: The commutator of \textbf{\^{A}} and \textbf{\^{B}} is $[\textbf{\^{A}},\textbf{\^{B}}] = \textbf{\^{A}\^{B}} - \textbf{\^{B}\^{A}}$ and their anti-commutator is $\{\textbf{\^{A}},\textbf{\^{B}}\} = \textbf{\^{A}\^{B}} + \textbf{\^{B}\^{A}}$.
+%             \item We say that two operators commute if their commutator is zero.
+%         \end{itemize}
+% \end{enumerate}
+
+% We have special names for operators with distinct properties. Namely, we call an operator with the property $\hat{\textbf{A}}^\dagger = \hat{\textbf{A}}$ \textbf{hermitian} and an operator with the property $\hat{\textbf{A}}^\dagger\hat{\textbf{A}} = \hat{\textbf{A}}\hat{\textbf{A}}^\dagger = \mathbb{I} \equiv \hat{\textbf{A}}^\dagger = \hat{\textbf{A}}^{-1}$ \textbf{unitary}. Unitary operations are ``reversible" since action on a state with $\hat{\textbf{A}}^\dagger$ will undo the action of \textbf{\^{A}}. Both hermitian and unitary operators are significant for quantum mechanics. We will discuss this in more detail in Section \ref{pos}.
+
+% Some important operators in quantum computing are 
+
+% \noindent identity:
+% $\mathbb{I} = 
+%     \begin{pmatrix}
+%         1 & 0 \\
+%         0 & 1 \\
+%     \end{pmatrix}\nonumber$
+    
+% \noindent the Pauli matrices: 
+% $\sigma_x = 
+%     \begin{pmatrix}
+%         0 & 1 \\
+%         1 & 0 \\
+%     \end{pmatrix}\;
+%     \sigma_y = 
+%     \begin{pmatrix}
+%         0 & -i \\
+%         i & 0 \\
+%     \end{pmatrix}\;
+%     \sigma_z = 
+%     \begin{pmatrix}
+%         1 & 0 \\
+%         0 & -1 \\
+%     \end{pmatrix}$
+    
+% \noindent and the Hadamard:
+% $\hat{H} = \frac{1}{\sqrt{2}}
+%     \begin{pmatrix}
+%         1 & 1 \\
+%         1 & -1 \\
+%     \end{pmatrix}$.
+    
+% \noindent We will discuss all of these operators and their function in more detail in future lectures.
+    
+% \subsection{Tensor Product}
+% The tensor product is an important tool for thinking of multiple quantum systems. A single qubit, which, again, is a two-state system, will exist in a complex vector space, called a Hilbert space $\mathcal{H}_A$. If we introduce another qubit into our quantum computer, it will exist in its own Hilbert space $\mathcal{H}_B$. How then, do we talk about these two qubit together?
+
+% Well, with a tensor product. Our full quantum computer system is now the tensor product of the two Hilbert spaces, namely $\mathcal{H}_A \otimes \mathcal{H}_B$. The state of each qubit will exist only in its relevant Hilbert space and an operator in $\mathcal{H}_A$ will only act on a state in $\mathcal{H}_A$ and vice versa. If qubit A is in state $\ket{\psi}$ and qubit B is in state $\ket{\phi}$, then our two-qubit computer is in state $\ket{\psi}_A \otimes \ket{\phi}_B$. Of course, this is generalizable to infinite numbers of qubits, or tensored Hilbert spaces.
+
+% The tensor product carries a few properties:
+
+% \begin{enumerate}
+%     \item For $c \in \mathbb{C}$, $c\left(\ket{\psi}_A \otimes \ket{\phi}_B\right) = c\ket{\psi}_A \otimes \ket{\phi}_B = \ket{\psi}_A \otimes c\ket{\phi}_B$
+%     \item Distribution: $\left(\ket{\psi_1}_A + \ket{\psi_2}_A\right)\otimes \ket{\phi}_B = \ket{\psi_1}_A \otimes \ket{\phi}_B + + \ket{\psi_2}_A \otimes \ket{\phi}_B$
+%     \item Operators act in their own spaces: $\textrm{\^A}_A \otimes \textrm{\^B}_B\left(\ket{\psi}_A \otimes \ket{\phi}_B\right) = \textrm{\^A}_A\ket{\psi}_A \otimes \textrm{\^B}_B\ket{\phi}_B$
+% \end{enumerate}
+
+% \noindent We also make a notation simplification:
+% \begin{align}
+%     \ket{\psi}_A \otimes \ket{\phi}_B = \ket{\psi}\ket{\phi} = \ket{\psi,\,\phi} = \ket{\psi\phi} \nonumber
+% \end{align}
+
+% \noindent The tensor product acts as following on vectors and matrices:
+% \begin{align}
+%     \begin{pmatrix}
+%         \alpha\\
+%         \beta
+%     \end{pmatrix} \otimes
+%     \begin{pmatrix}
+%         \gamma\\
+%         \delta
+%     \end{pmatrix} = 
+%     \begin{pmatrix}
+%         \alpha\gamma\\
+%         \alpha\delta\\
+%         \beta\gamma\\
+%         \beta\delta
+%     \end{pmatrix} \nonumber
+% \end{align}
+% \noindent For an n$\times$m matrix \textbf{A} and p$\times$q matrix \textbf{B}:
+% \begin{align}
+%     \textbf{A} \otimes \textbf{B} = 
+%     \begin{pmatrix}
+%         \textrm{A}_{11}\textbf{B} & \textrm{A}_{12}\textbf{B} & \hdots & \textrm{A}_{1\textrm{n}}\textbf{B}\\
+%         \textrm{A}_{21}\textbf{B} & \textrm{A}_{22}\textbf{B} & \hdots & \textrm{A}_{2\textrm{n}}\textbf{B}\\
+%         \vdots \\
+%         \textrm{A}_{\textrm{n}1}\textbf{B} & \textrm{A}_{\textrm{n}2}\textbf{B} & \hdots & \textrm{A}_{\textrm{n}\textrm{n}}\textbf{B}\\
+%     \end{pmatrix}\nonumber
+% \end{align}
+
+% We call two-qubit states that can be written as the tensor product of two states \textbf{product states} and those that cannot \textbf{entangled states}. For example,
+% \begin{align}
+%     \ket{\psi} = \frac{1}{2}\left(\ket{00} + \ket{10} - \ket{01} - \ket{11}\right) = \frac{\ket{0} + \ket{1}}{\sqrt{2}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+% \end{align}
+% is a product state while
+% \begin{align}
+%     \ket{\Psi^+} = \frac{\ket{00} + \ket{11}}{\sqrt{2}}
+% \end{align}
+% is not.
